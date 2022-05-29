@@ -27,9 +27,10 @@ class PictureOfDayViewModel(
             if (response.isSuccessful){
                 response.body()?.let {
                     liveData.postValue(PictureOfDayState.Success(it))
+
                 }
             }else{
-                //TODO
+                liveData.postValue(PictureOfDayState.Error(Exception()))
             }
         }
 

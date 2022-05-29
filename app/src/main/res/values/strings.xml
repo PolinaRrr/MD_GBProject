@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MD_GBProject</string>
+    <string name="search_wikipedia">Search Wikipedia</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="tdby">TDBY</string>
+    <string name="title">title</string>
+    <string name="annotation">annotation</string>
+    <string name="first_screen">first screen</string>
+    <string name="second_screen">second screen</string>
+    <string name="favourites">favourites</string>
+    <string name="settings">settings</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
 </resources>

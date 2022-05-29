@@ -7,13 +7,13 @@
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/blue_gray_600</item>
         <item name="colorPrimaryVariant">@color/blue_gray_900</item>
-        <item name="colorOnPrimary">@color/blue_gray_50</item>
+        <item name="colorOnPrimary">@color/blue_gray_300</item>
         <item name="android:navigationBarColor">@color/blue_gray_500</item>
         <item name="colorPrimaryContainer">@color/blue_gray_100</item>
         <item name="colorOnPrimaryContainer">@color/blue_gray_900</item>
         <item name="colorPrimaryInverse">@color/blue_gray_200</item>
         <item name="colorSecondary">@color/blue_gray_600</item>
-        <item name="colorOnSecondary">@color/blue_gray_50</item>
+        <item name="colorOnSecondary">@color/blue_gray_100</item>
         <item name="colorSecondaryContainer">@color/blue_gray_100</item>
         <item name="colorOnSecondaryContainer">@color/blue_gray_900</item>
         <item name="colorTertiary">@color/blue_gray_600</item>
@@ -31,7 +31,7 @@
     </style>
     <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice"/>
     <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="tint">@color/blue_gray_600</item>
+        <item name="tint">@color/blue_gray_900</item>
     </style>
 
     <style name="BlueGreyStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">

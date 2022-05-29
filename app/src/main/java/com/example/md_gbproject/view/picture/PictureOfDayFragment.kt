@@ -25,7 +25,7 @@ class PictureOfDayFragment : Fragment() {
         get() = _binding!!
 
     private val viewModel: PictureOfDayViewModel by lazy {
-        ViewModelProvider(this).get(PictureOfDayViewModel::class.java)
+        ViewModelProvider(this)[PictureOfDayViewModel::class.java]
     }
     private var isMain = true
 
@@ -33,7 +33,7 @@ class PictureOfDayFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPictureOfDayBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -65,6 +65,7 @@ class PictureOfDayFragment : Fragment() {
             renderData(it)
         }
         viewModel.sendRequest()
+        //вынести в отдельную функцию
         binding.textInputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
@@ -81,6 +82,7 @@ class PictureOfDayFragment : Fragment() {
 
     private fun processFabClick() {
         binding.floatingActionButton.setOnClickListener {
+
             if (isMain) {
                 binding.bottomAppBar.navigationIcon = null
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
@@ -90,6 +92,8 @@ class PictureOfDayFragment : Fragment() {
                         R.drawable.ic_back
                     )
                 )
+                binding.bottomAppBar.replaceMenu(R.menu.menu_navigation_bar)
+
             } else {
                 binding.bottomAppBar.navigationIcon =
                     (ContextCompat.getDrawable(
@@ -104,10 +108,10 @@ class PictureOfDayFragment : Fragment() {
                         R.drawable.ic_add_fab
                     )
                 )
-                //TODO
+                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
+            isMain = !isMain
         }
-        isMain = !isMain
     }
 
     private fun processChipGroupChecked() {
@@ -161,16 +165,26 @@ class PictureOfDayFragment : Fragment() {
             }
             is PictureOfDayState.Success -> {
 
-                binding.image.load(pictureOfDayState.pictureOfDayResponseData.url) {
-                    //TODO
+                if(pictureOfDayState.pictureOfDayResponseData.mediaType=="image"){
+                    binding.image.load(pictureOfDayState.pictureOfDayResponseData.url) {
+                        //TODO скрасить загрузку
+                    }
+                }else{
+                    //отображение видео
+                    // binding.image.load(pictureOfDayState.pictureOfDayResponseData.hdurl)
                 }
+
                 binding.bottomSheet.textViewTitle.text =
                     pictureOfDayState.pictureOfDayResponseData.title
+
+                binding.bottomSheet.textViewAnnotation.text =
+                    pictureOfDayState.pictureOfDayResponseData.explanation
             }
         }
     }
 
     override fun onDestroy() {
+        _binding = null
         super.onDestroy()
     }
 

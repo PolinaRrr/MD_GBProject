@@ -5,20 +5,25 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/text_input_layout"
-        android:hint="Search Wikipedia"
-        app:endIconDrawable="@drawable/ic_wikipedia"
-        app:helperText="Search Wikipedia"
+        android:hint="@string/search_wikipedia"
         app:counterEnabled="true"
-        app:counterMaxLength="20">
+        app:counterMaxLength="30"
+        app:endIconDrawable="@drawable/ic_wikipedia"
+        app:endIconContentDescription="content_description_end_icon"
+        app:helperText="Search Wikipedia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/input_edit_text"
-            android:inputType="textPassword"/>
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:inputType="textPassword" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.example.md_gbproject.utils.EquilateralImageView
@@ -26,31 +31,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ic_no_image_vector" />
+        app:srcCompat="@drawable/ic_no_image_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"/>
+
     <include
         android:id="@+id/bottom_sheet"
         layout="@layout/bottom_sheet_layout"/>
+
     <com.google.android.material.chip.ChipGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/chip_group"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today"/>
+            android:text="@string/today"/>
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yesterday"/>
+            android:text="@string/yesterday"/>
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TDBY"/>
-
+            android:text="@string/tdby"/>
     </com.google.android.material.chip.ChipGroup>
+
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,12 +70,17 @@
         android:backgroundTint="?colorPrimary"
         app:fabAlignmentMode="center"
         app:navigationIcon="@drawable/ic_menu_bottom_bar"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/floating_action_button"
-        android:backgroundTint="?colorPrimary"
+        android:backgroundTint="@color/blue_gray_50"
+        android:contentDescription="@string/add"
+        app:tint="@color/blue_gray_900"
+        app:borderWidth="2dp"
         app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat ="@drawable/ic_add_fab"/>
+        app:srcCompat="@drawable/ic_add_fab" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

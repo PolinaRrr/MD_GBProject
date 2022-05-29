@@ -28,7 +28,7 @@
         android:layout_marginTop="5dp"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
-        android:text="title"
+        android:text="@string/title"
         android:textStyle="bold"/>
 
     <TextView
@@ -40,6 +40,6 @@
         app:layout_constraintTop_toBottomOf="@+id/text_view_title"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
-        android:text="annotation"/>
+        android:text="@string/annotation"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
