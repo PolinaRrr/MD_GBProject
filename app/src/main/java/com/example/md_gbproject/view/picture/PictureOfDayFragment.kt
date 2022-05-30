@@ -68,15 +68,16 @@ class PictureOfDayFragment : Fragment() {
             renderData(it)
         }
         viewModel.sendRequest()
-
         requestToWiki()
         sheetBehaviorInit()
-
-        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
-        setHasOptionsMenu(true)
-
+        initOptionsMenu()
         processFabClick()
         processChipGroupChecked()
+    }
+
+    private fun initOptionsMenu(){
+        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
+        setHasOptionsMenu(true)
     }
 
     private fun requestToWiki() {
@@ -126,7 +127,6 @@ class PictureOfDayFragment : Fragment() {
             when (position) {
                 1 -> {
                     viewModel.sendRequest()
-
                 }
                 2 -> {
                     viewModel.sendRequestForYesterday()
