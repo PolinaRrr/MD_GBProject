@@ -30,7 +30,9 @@
         <item name="chipStyle">@style/BlueGreyStyleChip</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice"/>
+
+    <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice" />
+
     <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">@color/blue_gray_900</item>
     </style>

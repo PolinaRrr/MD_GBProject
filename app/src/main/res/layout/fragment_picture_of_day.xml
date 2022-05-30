@@ -11,8 +11,8 @@
         android:hint="@string/search_wikipedia"
         app:counterEnabled="true"
         app:counterMaxLength="30"
-        app:endIconDrawable="@drawable/ic_wikipedia"
         app:endIconContentDescription="content_description_end_icon"
+        app:endIconDrawable="@drawable/ic_wikipedia"
         app:helperText="Search Wikipedia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,45 +31,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ic_no_image_vector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+        app:srcCompat="@drawable/ic_no_image_vector" />
 
     <include
         android:id="@+id/bottom_sheet"
-        layout="@layout/bottom_sheet_layout"/>
+        layout="@layout/bottom_sheet_layout" />
 
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/chip_group"
         android:layout_gravity="center_horizontal"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/today"/>
+            android:text="@string/today" />
+
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/yesterday"/>
+            android:text="@string/yesterday" />
+
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tdby"/>
+            android:text="@string/tdby" />
     </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_app_bar"
         android:layout_gravity="bottom"
         android:backgroundTint="?colorPrimary"
         app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/ic_menu_bottom_bar"/>
+        app:navigationIcon="@drawable/ic_menu_bottom_bar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button"
@@ -77,10 +79,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue_gray_50"
         android:contentDescription="@string/add"
-        app:tint="@color/blue_gray_900"
         app:borderWidth="2dp"
         app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat="@drawable/ic_add_fab" />
+        app:srcCompat="@drawable/ic_add_fab"
+        app:tint="@color/blue_gray_900" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

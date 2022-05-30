@@ -79,13 +79,14 @@ class PictureOfDayFragment : Fragment() {
         processChipGroupChecked()
     }
 
-    private fun requestToWiki(){
+    private fun requestToWiki() {
         binding.textInputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
             })
         }
     }
+
     private fun processFabClick() {
         binding.floatingActionButton.setOnClickListener {
 
@@ -186,7 +187,7 @@ class PictureOfDayFragment : Fragment() {
                     }
                 } else {
                     //отображение видео
-                        Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
+                    Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
                 }
 
                 binding.bottomSheet.textViewTitle.text =
@@ -197,7 +198,6 @@ class PictureOfDayFragment : Fragment() {
             }
         }
     }
-
 
 
     override fun onDestroy() {
