@@ -8,8 +8,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
+import com.bumptech.glide.Glide
 import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentPictureOfDayBinding
+import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
+import com.example.md_gbproject.utils.SURPRISE_IMAGE
 import com.example.md_gbproject.utils.WIKI_DOMAIN
 import com.example.md_gbproject.view.MainActivity
 import com.example.md_gbproject.viewmodel.PictureOfDayState
@@ -65,12 +68,8 @@ class PictureOfDayFragment : Fragment() {
             renderData(it)
         }
         viewModel.sendRequest()
-        //вынести в отдельную функцию
-        binding.textInputLayout.setEndIconOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
-            })
-        }
+
+        requestToWiki()
         sheetBehaviorInit()
 
         (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
@@ -80,6 +79,13 @@ class PictureOfDayFragment : Fragment() {
         processChipGroupChecked()
     }
 
+    private fun requestToWiki(){
+        binding.textInputLayout.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
+            })
+        }
+    }
     private fun processFabClick() {
         binding.floatingActionButton.setOnClickListener {
 
@@ -115,11 +121,20 @@ class PictureOfDayFragment : Fragment() {
     }
 
     private fun processChipGroupChecked() {
-        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
-            when (checkedId) {
-                //TODO()
+        binding.chipGroup.setOnCheckedChangeListener { group, position ->
+            when (position) {
+                1 -> {
+                    viewModel.sendRequest()
+
+                }
+                2 -> {
+                    viewModel.sendRequestForYesterday()
+                }
+                3 -> {
+                    viewModel.sendRequestForBeforeYesterday()
+                }
             }
-            group.findViewById<Chip>(checkedId)?.let {
+            group.findViewById<Chip>(position)?.let {
 
             }
         }
@@ -165,13 +180,13 @@ class PictureOfDayFragment : Fragment() {
             }
             is PictureOfDayState.Success -> {
 
-                if(pictureOfDayState.pictureOfDayResponseData.mediaType=="image"){
+                if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
                     binding.image.load(pictureOfDayState.pictureOfDayResponseData.url) {
                         //TODO скрасить загрузку
                     }
-                }else{
+                } else {
                     //отображение видео
-                    // binding.image.load(pictureOfDayState.pictureOfDayResponseData.hdurl)
+                        Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
                 }
 
                 binding.bottomSheet.textViewTitle.text =
@@ -182,6 +197,8 @@ class PictureOfDayFragment : Fragment() {
             }
         }
     }
+
+
 
     override fun onDestroy() {
         _binding = null

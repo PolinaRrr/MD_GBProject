@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.example.md_gbproject.BuildConfig
 import com.example.md_gbproject.repository.PictureOfDayResponseData
 import com.example.md_gbproject.repository.PictureOfDayRetrofitImpl
+import com.example.md_gbproject.utils.DAY_BEFORE_YESTERDAY
+import com.example.md_gbproject.utils.Utils
+import com.example.md_gbproject.utils.YESTERDAY
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,9 +42,26 @@ class PictureOfDayViewModel(
         }
     }
 
+    //отправка за сегодня
     fun sendRequest(){
         liveData.postValue(PictureOfDayState.Loading(null))
         //TODO
         pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY).enqueue(callback)
     }
+
+    //отправка за вчера
+    fun
+
+
+            sendRequestForYesterday(){
+        liveData.postValue(PictureOfDayState.Loading(null))
+        pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY,Utils.getData(YESTERDAY)).enqueue(callback)
+    }
+
+    //отправка за позавчера
+    fun sendRequestForBeforeYesterday(){
+        liveData.postValue(PictureOfDayState.Loading(null))
+        pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY,Utils.getData(DAY_BEFORE_YESTERDAY)).enqueue(callback)
+    }
+
 }

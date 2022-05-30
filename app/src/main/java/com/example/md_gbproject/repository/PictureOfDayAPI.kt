@@ -10,4 +10,8 @@ interface PictureOfDayAPI {
     @GET(KEY_APOD_PATH)
     fun getPictureOfTheDay(@Query("api_key") apiKey: String)
     : Call<PictureOfDayResponseData>
+
+    @GET(KEY_APOD_PATH)
+    fun getPictureOfTheDay(@Query("api_key") apiKey: String,@Query("date") date:String)
+            : Call<PictureOfDayResponseData>
 }

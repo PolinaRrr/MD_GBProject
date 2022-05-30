@@ -27,6 +27,7 @@
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="chipStyle">@style/BlueGreyStyleChip</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice"/>
