@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="brandColor" format="reference"/>
+    <attr name="brandColor_colorPrimary" format="reference"/>
+    <attr name="brandColor_colorPrimaryVariant" format="reference"/>
+    <attr name="brandColor_colorOnPrimary" format="reference"/>
+    <attr name="brandColor_navigationBarColor" format="reference"/>
+    <attr name="brandColor_colorPrimaryContainer" format="reference"/>
+    <attr name="brandColor_colorOnPrimaryContainer" format="reference"/>
+    <attr name="brandColor_colorPrimaryInverse" format="reference"/>
+    <attr name="brandColor_colorSecondary" format="reference"/>
+    <attr name="brandColor_colorOnSecondary" format="reference"/>
+    <attr name="brandColor_colorSecondaryContainer" format="reference"/>
+    <attr name="brandColor_colorOnSecondaryContainer" format="reference"/>
+    <attr name="brandColor_colorTertiary" format="reference"/>
+    <attr name="brandColor_colorOnTertiary" format="reference"/>
+    <attr name="brandColor_colorTertiaryContainer" format="reference"/>
+    <attr name="brandColor_colorOnTertiaryContainer" format="reference"/>
+</resources>
+

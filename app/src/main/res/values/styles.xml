@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice" />
+
+    <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@color/blue_gray_900</item>
+    </style>
+
+    <style name="BlueGreyStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#37474F</item>
+        <item name="helperTextEnabled">false</item>
+        <item name="counterEnabled">false</item>
+        <item name="errorTextColor">#263238</item>
+    </style>
+</resources>

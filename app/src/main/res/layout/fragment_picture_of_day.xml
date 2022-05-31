@@ -6,7 +6,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/textInputLayout_width"
         android:layout_height="wrap_content"
         android:hint="@string/search_wikipedia"
         app:counterEnabled="true"
@@ -21,7 +21,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="91dp"
+            android:layout_height="@dimen/textInputEditText_height"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue_gray_50"
         android:contentDescription="@string/add"
-        app:borderWidth="2dp"
+        app:borderWidth="@dimen/width_border"
         app:layout_anchor="@id/bottom_app_bar"
         app:srcCompat="@drawable/ic_add_fab"
         app:tint="@color/blue_gray_900" />

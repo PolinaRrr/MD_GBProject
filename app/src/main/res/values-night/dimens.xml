@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_element">10dp</dimen>
+    <dimen name="behavior_height">50dp</dimen>
+    <dimen name="basic_width_view">30dp</dimen>
+    <dimen name="basic_height_view">2dp</dimen>
+    <dimen name="marginTop_view">5dp</dimen>
+    <dimen name="padding_textView">5dp</dimen>
+    <dimen name="width_border">2dp</dimen>
+    <dimen name="textInputEditText_height">91dp</dimen>
+    <dimen name="textInputLayout_width">0dp</dimen>
+</resources>

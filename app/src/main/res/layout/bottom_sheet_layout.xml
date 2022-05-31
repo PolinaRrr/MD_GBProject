@@ -7,13 +7,13 @@
     android:background="#FFFFFF"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="50dp">
+    app:behavior_peekHeight="@dimen/behavior_height">
 
     <View
-        android:layout_width="30dp"
-        android:layout_height="2dp"
+        android:layout_width="@dimen/basic_width_view"
+        android:layout_height="@dimen/basic_height_view"
         android:id="@+id/bottom_sheet_line"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/marginTop_view"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +25,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_line"
-        android:layout_marginTop="5dp"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
+        android:layout_marginTop="@dimen/marginTop_view"
+        android:paddingStart="@dimen/padding_textView"
+        android:paddingEnd="@dimen/padding_textView"
         android:text="@string/title"
         android:textStyle="bold"/>
 
@@ -38,8 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_title"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
+        android:paddingStart="@dimen/padding_textView"
+        android:paddingEnd="@dimen/padding_textView"
         android:text="@string/annotation"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MD_GBProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="GrayThemeProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/blue_gray_600</item>
+        <item name="colorPrimary">@color/blue_gray_500</item>
         <item name="colorPrimaryVariant">@color/blue_gray_900</item>
         <item name="colorOnPrimary">@color/blue_gray_300</item>
         <item name="android:navigationBarColor">@color/blue_gray_500</item>
@@ -31,17 +31,13 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice" />
-
-    <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="tint">@color/blue_gray_900</item>
+    <style name="TealThemeProject" parent="GrayThemeProject">
+        <item name="brandColor">@color/teal_900</item>
     </style>
 
-    <style name="BlueGreyStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">#37474F</item>
-        <item name="helperTextEnabled">false</item>
-        <item name="counterEnabled">false</item>
-        <item name="errorTextColor">#263238</item>
+    <style name="MagentaThemeProject" parent="GrayThemeProject">
+        <item name="brandColor">@color/dark_moderate_magenta</item>
     </style>
+
 
 </resources>

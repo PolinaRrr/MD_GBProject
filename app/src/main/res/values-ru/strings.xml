@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Фото дня</string>
+    <string name="today">Сегодня</string>
+    <string name="yesterday">Вчера</string>
+    <string name="tdby">Позавчера</string>
+    <string name="first_screen">На первый экран</string>
+    <string name="second_screen">На следующий экран</string>
+    <string name="favourites">Избранное</string>
+    <string name="settings">Настройки</string>
+    <string name="add">Добавить</string>
+    <string name="delete">Удалить</string>
+    <string name="search_wikipedia">Википедия</string>
+</resources>
