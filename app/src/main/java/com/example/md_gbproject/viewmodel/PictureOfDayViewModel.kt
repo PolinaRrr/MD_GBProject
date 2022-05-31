@@ -50,10 +50,7 @@ class PictureOfDayViewModel(
     }
 
     //отправка за вчера
-    fun
-
-
-            sendRequestForYesterday(){
+    fun sendRequestForYesterday(){
         liveData.postValue(PictureOfDayState.Loading(null))
         pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY,Utils.getData(YESTERDAY)).enqueue(callback)
     }
