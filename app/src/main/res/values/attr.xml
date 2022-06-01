@@ -16,5 +16,7 @@
     <attr name="brandColor_colorOnTertiary" format="reference"/>
     <attr name="brandColor_colorTertiaryContainer" format="reference"/>
     <attr name="brandColor_colorOnTertiaryContainer" format="reference"/>
+    <attr name="brandColor_background" format="reference"/>
+    <attr name="brandColor_onBackground" format="reference"/>
 </resources>
 

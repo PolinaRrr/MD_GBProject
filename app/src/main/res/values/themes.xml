@@ -5,22 +5,23 @@
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/blue_gray_500</item>
-        <item name="colorPrimaryVariant">@color/blue_gray_900</item>
-        <item name="colorOnPrimary">@color/blue_gray_300</item>
-        <item name="android:navigationBarColor">@color/blue_gray_500</item>
-        <item name="colorPrimaryContainer">@color/blue_gray_100</item>
-        <item name="colorOnPrimaryContainer">@color/blue_gray_900</item>
-        <item name="colorPrimaryInverse">@color/blue_gray_200</item>
-        <item name="colorSecondary">@color/blue_gray_600</item>
-        <item name="colorOnSecondary">@color/blue_gray_100</item>
-        <item name="colorSecondaryContainer">@color/blue_gray_100</item>
-        <item name="colorOnSecondaryContainer">@color/blue_gray_900</item>
-        <item name="colorTertiary">@color/blue_gray_600</item>
-        <item name="colorOnTertiary">@color/white</item>
-        <item name="colorTertiaryContainer">@color/blue_gray_100</item>
-        <item name="colorOnTertiaryContainer">@color/blue_gray_900</item>
-
+        <item name="colorPrimary">?brandColor_colorPrimary</item>
+        <item name="colorPrimaryVariant">?brandColor_colorPrimaryVariant</item>
+        <item name="colorOnPrimary">?brandColor_colorOnPrimary</item>
+        <item name="android:navigationBarColor">?brandColor_navigationBarColor</item>
+        <item name="colorPrimaryContainer">?brandColor_colorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">?brandColor_colorOnPrimaryContainer</item>
+        <item name="colorPrimaryInverse">?brandColor_colorPrimaryInverse</item>
+        <item name="colorSecondary">?brandColor_colorSecondary</item>
+        <item name="colorOnSecondary">?brandColor_colorOnSecondary</item>
+        <item name="colorSecondaryContainer">?brandColor_colorSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">?colorOnSecondaryContainer</item>
+        <item name="colorTertiary">?brandColor_colorTertiary</item>
+        <item name="colorOnTertiary">?brandColor_colorOnTertiary</item>
+        <item name="colorTertiaryContainer">?brandColor_colorTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">?brandColor_colorOnTertiaryContainer</item>
+        <item name="android:background">?brandColor_background</item>
+        <item name="colorOnBackground">?brandColor_onBackground</item>
         <!-- Secondary brand color. -->
 
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -37,6 +38,24 @@
 
     <style name="MagentaThemeProject" parent="GrayThemeProject">
         <item name="brandColor">@color/dark_moderate_magenta</item>
+        <item name="brandColor_colorPrimary">@color/md_theme_light_primary</item>
+        <item name="brandColor_colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="brandColor_colorPrimaryVariant">@color/md_theme_light_PrimaryVariant</item>
+        <item name="brandColor_colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="brandColor_navigationBarColor">@color/md_theme_light_navigationBarColor</item>
+        <item name="brandColor_colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="brandColor_colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="brandColor_colorPrimaryInverse">@color/md_theme_light_colorPrimaryInverse</item>
+        <item name="brandColor_colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="brandColor_colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="brandColor_colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="brandColor_colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="brandColor_colorOnTertiary">@color/md_theme_light_onTertiary</item>
+        <item name="brandColor_colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
+        <item name="brandColor_colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="brandColor_background">@color/md_theme_light_background</item>
+        <item name="brandColor_onBackground">@color/md_theme_light_onBackground</item>
+
     </style>
 
 
