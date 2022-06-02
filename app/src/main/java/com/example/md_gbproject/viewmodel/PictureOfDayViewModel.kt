@@ -34,6 +34,7 @@ class PictureOfDayViewModel(
                 }
             }else{
                 liveData.postValue(PictureOfDayState.Error(Exception()))
+
             }
         }
 
@@ -53,6 +54,7 @@ class PictureOfDayViewModel(
     fun sendRequestForYesterday(){
         liveData.postValue(PictureOfDayState.Loading(null))
         pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY,Utils.getData(YESTERDAY)).enqueue(callback)
+
     }
 
     //отправка за позавчера

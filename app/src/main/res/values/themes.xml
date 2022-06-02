@@ -38,8 +38,5 @@
         <item name="tint">?brandColor_tint</item>
     </style>
 
-    <style name="TabTextStyle" parent="Widget.Design.TabLayout">
-        <item name="tabTextColor">?brandColor_tabTextColor</item>
-    </style>
 
 </resources>

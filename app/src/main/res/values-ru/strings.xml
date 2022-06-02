@@ -14,4 +14,5 @@
     <string name="grey_blue_theme">Серая тема</string>
     <string name="teal_theme">Бирюзовая тема</string>
     <string name="magenta_theme">Пурпурная тема</string>
+    <string name="themes">Themes</string>
 </resources>

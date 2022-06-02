@@ -3,6 +3,7 @@ package com.example.md_gbproject.view.picture
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -176,7 +177,8 @@ class PictureOfDayFragment : Fragment() {
 
         when (pictureOfDayState) {
             is PictureOfDayState.Error -> {
-
+                Log.d("@@@","error ${pictureOfDayState.error}")
+                Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
             }
             is PictureOfDayState.Loading -> {
 

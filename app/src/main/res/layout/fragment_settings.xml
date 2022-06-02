@@ -3,66 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/settings_container">
+    android:orientation="vertical">
 
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/today" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/yesterday" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tdby" />
-    </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.tabs.TabLayout
 
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:orientation="vertical"
-
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip_group">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIconTint="?attr/brandColor_colorSecondary"
+        app:tabTextColor="?attr/brandColor_colorSecondary">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
-            android:tag="one"
-            android:text="@string/grey_blue_theme"/>
+            android:text="@string/themes"
+            android:clickable="false"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
-            android:tag="two"
+            android:text="@string/grey_blue_theme" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
             android:text="@string/teal_theme" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
-            android:tag="three"
             android:text="@string/magenta_theme" />
 
     </com.google.android.material.tabs.TabLayout>
@@ -72,11 +47,12 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="20dp"
+        android:layout_marginTop="136dp"
         app:cardBackgroundColor="?colorOnBackground"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:cardCornerRadius="20dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

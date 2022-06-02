@@ -10,7 +10,6 @@ import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentSettingsBinding
 import com.example.md_gbproject.utils.CHOSEN_THEME
 import com.example.md_gbproject.utils.LOCAL_SP
-import com.google.android.material.chip.Chip
 import com.google.android.material.tabs.TabLayout
 class SettingsFragment : Fragment() {
 
@@ -26,7 +25,7 @@ class SettingsFragment : Fragment() {
     ): View {
         val localContext: Context = ContextThemeWrapper(activity, getIdTheme(getCurrentIdTheme()))
         val localInflater = inflater.cloneInContext(localContext)
-        _binding = FragmentSettingsBinding.inflate(localInflater)
+        _binding = FragmentSettingsBinding.inflate(localInflater,container, false)
         return binding.root
     }
 
@@ -37,28 +36,17 @@ class SettingsFragment : Fragment() {
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab?.position) {
-                    0 -> {
+                    1-> {
                         setCurrentTheme(R.style.BlueGreyThemeProject)
-                        requireActivity().supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.settings_container,newInstance())
-                            .commit()
-                    }
-                    1 -> {
-                        setCurrentTheme(R.style.TealThemeProject)
-                        requireActivity().supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.settings_container, newInstance())
-                            .commit()
                     }
                     2 -> {
+                        setCurrentTheme(R.style.TealThemeProject)
+                    }
+                    3 -> {
                         setCurrentTheme(R.style.MagentaThemeProject)
-                        requireActivity().supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.settings_container,newInstance())
-                            .commit()
                     }
                 }
+                requireActivity().recreate()
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -80,21 +68,7 @@ class SettingsFragment : Fragment() {
     }
 
 
-    private fun processChipGroupChecked() {
-        binding.chipGroup.setOnCheckedChangeListener { group, position ->
-            when (position) {
-                1 -> {
-                }
-                2 -> {
-                }
-                3 -> {
-                }
-            }
-            group.findViewById<Chip>(position)?.let {
 
-            }
-        }
-    }
 
     private fun getIdTheme(idTheme: Int): Int {
         return idTheme

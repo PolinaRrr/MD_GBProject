@@ -3,10 +3,8 @@
     <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice" />
 
     <style name="BlueGreyThemeProject" parent="GrayThemeProject">
-        <item name="boxStrokeColor">#37474F</item>
-        <item name="helperTextEnabled">false</item>
-        <item name="counterEnabled">false</item>
-        <item name="errorTextColor">#263238</item>
+
+        <item name="brandColor">@color/blue_gray_700</item>
         <item name="brandColor_colorPrimary">@color/bg_theme_light_primary</item>
         <item name="brandColor_colorSecondary">@color/bg_theme_light_secondary</item>
         <item name="brandColor_colorPrimaryVariant">@color/bg_theme_light_primaryVariant</item>
