@@ -18,5 +18,10 @@
     <attr name="brandColor_colorOnTertiaryContainer" format="reference"/>
     <attr name="brandColor_background" format="reference"/>
     <attr name="brandColor_onBackground" format="reference"/>
+    <attr name="brandColor_surface" format="reference"/>
+    <attr name="brandColor_onSurface" format="reference"/>
+    <attr name="brandColor_surfaceVariant" format="reference"/>
+    <attr name="brandColor_onSurfaceVariant" format="reference"/>
+
 </resources>
 

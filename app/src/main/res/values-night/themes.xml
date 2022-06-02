@@ -26,6 +26,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+
     <style name="TealThemeProject" parent="GrayThemeProject">
         <item name="brandColor">@color/teal_900</item>
         <item name="brandColor_colorPrimary">@color/teal_theme_dark_primary</item>
@@ -49,22 +50,22 @@
 
     <style name="MagentaThemeProject" parent="GrayThemeProject">
         <item name="brandColor">@color/dark_moderate_magenta</item>
-        <item name="brandColor_colorPrimary">@color/md_theme_dark_primary</item>
-        <item name="brandColor_colorSecondary">@color/md_theme_dark_secondary</item>
-        <item name="brandColor_colorPrimaryVariant">@color/md_theme_dark_primaryVariant</item>
-        <item name="brandColor_colorOnPrimary">@color/md_theme_dark_onPrimary</item>
-        <item name="brandColor_navigationBarColor">@color/md_theme_dark_navigationBarColor</item>
-        <item name="brandColor_colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
-        <item name="brandColor_colorOnPrimaryContainer">@color/md_theme_dark_onPrimaryContainer</item>
-        <item name="brandColor_colorPrimaryInverse">@color/md_theme_dark_colorPrimaryInverse</item>
-        <item name="brandColor_colorOnSecondary">@color/md_theme_dark_onSecondary</item>
-        <item name="brandColor_colorSecondaryContainer">@color/md_theme_dark_secondaryContainer</item>
-        <item name="brandColor_colorOnSecondaryContainer">@color/md_theme_dark_onSecondaryContainer</item>
-        <item name="brandColor_colorTertiary">@color/md_theme_dark_tertiary</item>
-        <item name="brandColor_colorOnTertiary">@color/md_theme_dark_onTertiary</item>
-        <item name="brandColor_colorTertiaryContainer">@color/md_theme_dark_tertiaryContainer</item>
-        <item name="brandColor_colorOnTertiaryContainer">@color/md_theme_dark_onTertiaryContainer</item>
-        <item name="brandColor_background">@color/md_theme_dark_background</item>
-        <item name="brandColor_onBackground">@color/md_theme_dark_onBackground</item>
+        <item name="brandColor_colorPrimary">@color/mg_theme_dark_primary</item>
+        <item name="brandColor_colorSecondary">@color/mg_theme_dark_secondary</item>
+        <item name="brandColor_colorPrimaryVariant">@color/mg_theme_dark_primaryVariant</item>
+        <item name="brandColor_colorOnPrimary">@color/mg_theme_dark_onPrimary</item>
+        <item name="brandColor_navigationBarColor">@color/mg_theme_dark_navigationBarColor</item>
+        <item name="brandColor_colorPrimaryContainer">@color/mg_theme_dark_primaryContainer</item>
+        <item name="brandColor_colorOnPrimaryContainer">@color/mg_theme_dark_onPrimaryContainer</item>
+        <item name="brandColor_colorPrimaryInverse">@color/mg_theme_dark_colorPrimaryInverse</item>
+        <item name="brandColor_colorOnSecondary">@color/mg_theme_dark_onSecondary</item>
+        <item name="brandColor_colorSecondaryContainer">@color/mg_theme_dark_secondaryContainer</item>
+        <item name="brandColor_colorOnSecondaryContainer">@color/mg_theme_dark_onSecondaryContainer</item>
+        <item name="brandColor_colorTertiary">@color/mg_theme_dark_tertiary</item>
+        <item name="brandColor_colorOnTertiary">@color/mg_theme_dark_onTertiary</item>
+        <item name="brandColor_colorTertiaryContainer">@color/mg_theme_dark_tertiaryContainer</item>
+        <item name="brandColor_colorOnTertiaryContainer">@color/mg_theme_dark_onTertiaryContainer</item>
+        <item name="brandColor_background">@color/mg_theme_dark_background</item>
+        <item name="brandColor_onBackground">@color/mg_theme_dark_onBackground</item>
     </style>
 </resources>

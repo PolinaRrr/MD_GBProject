@@ -15,6 +15,7 @@ import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
 import com.example.md_gbproject.utils.WIKI_DOMAIN
 import com.example.md_gbproject.view.MainActivity
+import com.example.md_gbproject.view.settings.SettingsFragment
 import com.example.md_gbproject.viewmodel.PictureOfDayState
 import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -52,7 +53,8 @@ class PictureOfDayFragment : Fragment() {
 
             }
             R.id.bottom_bar_settings -> {
-
+                requireActivity().supportFragmentManager.beginTransaction().
+                        replace(R.id.container,SettingsFragment.newInstance()).addToBackStack("").commit()
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment.newInstance()

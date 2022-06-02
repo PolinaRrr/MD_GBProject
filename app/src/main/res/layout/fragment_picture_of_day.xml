@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="?colorPrimary"
+        android:backgroundTint="?android:background"
         app:fabAlignmentMode="center"
         app:navigationIcon="@drawable/ic_menu_bottom_bar" />
 

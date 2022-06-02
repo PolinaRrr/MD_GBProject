@@ -22,6 +22,11 @@
         <item name="colorOnTertiaryContainer">?brandColor_colorOnTertiaryContainer</item>
         <item name="android:background">?brandColor_background</item>
         <item name="colorOnBackground">?brandColor_onBackground</item>
+        <item name="colorSurface">?brandColor_surface</item>
+        <item name="colorOnSurface">?brandColor_onSurface</item>
+        <item name="colorSurfaceVariant">?brandColor_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">?brandColor_onSurfaceVariant</item>
+
         <!-- Secondary brand color. -->
 
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -31,50 +36,5 @@
         <item name="chipStyle">@style/BlueGreyStyleChip</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="TealThemeProject" parent="GrayThemeProject">
-        <item name="brandColor">@color/teal_900</item>
-        <item name="brandColor_colorPrimary">@color/teal_theme_light_primary</item>
-        <item name="brandColor_colorSecondary">@color/teal_theme_light_secondary</item>
-        <item name="brandColor_colorPrimaryVariant">@color/teal_theme_light_primaryVariant</item>
-        <item name="brandColor_colorOnPrimary">@color/teal_theme_light_onPrimary</item>
-        <item name="brandColor_navigationBarColor">@color/teal_theme_light_navigationBarColor</item>
-        <item name="brandColor_colorPrimaryContainer">@color/teal_theme_light_primaryContainer</item>
-        <item name="brandColor_colorOnPrimaryContainer">@color/teal_theme_light_onPrimaryContainer</item>
-        <item name="brandColor_colorPrimaryInverse">@color/teal_theme_light_colorPrimaryInverse</item>
-        <item name="brandColor_colorOnSecondary">@color/teal_theme_light_onSecondary</item>
-        <item name="brandColor_colorSecondaryContainer">@color/teal_theme_light_secondaryContainer</item>
-        <item name="brandColor_colorOnSecondaryContainer">@color/teal_theme_light_onSecondaryContainer</item>
-        <item name="brandColor_colorTertiary">@color/teal_theme_light_tertiary</item>
-        <item name="brandColor_colorOnTertiary">@color/teal_theme_light_onTertiary</item>
-        <item name="brandColor_colorTertiaryContainer">@color/teal_theme_light_tertiaryContainer</item>
-        <item name="brandColor_colorOnTertiaryContainer">@color/teal_theme_light_onTertiaryContainer</item>
-        <item name="brandColor_background">@color/teal_theme_light_background</item>
-        <item name="brandColor_onBackground">@color/teal_theme_light_onBackground</item>
-
-
-    </style>
-
-    <style name="MagentaThemeProject" parent="GrayThemeProject">
-        <item name="brandColor">@color/dark_moderate_magenta</item>
-        <item name="brandColor_colorPrimary">@color/md_theme_light_primary</item>
-        <item name="brandColor_colorSecondary">@color/md_theme_light_secondary</item>
-        <item name="brandColor_colorPrimaryVariant">@color/md_theme_light_primaryVariant</item>
-        <item name="brandColor_colorOnPrimary">@color/md_theme_light_onPrimary</item>
-        <item name="brandColor_navigationBarColor">@color/md_theme_light_navigationBarColor</item>
-        <item name="brandColor_colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
-        <item name="brandColor_colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
-        <item name="brandColor_colorPrimaryInverse">@color/md_theme_light_colorPrimaryInverse</item>
-        <item name="brandColor_colorOnSecondary">@color/md_theme_light_onSecondary</item>
-        <item name="brandColor_colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
-        <item name="brandColor_colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
-        <item name="brandColor_colorTertiary">@color/md_theme_light_tertiary</item>
-        <item name="brandColor_colorOnTertiary">@color/md_theme_light_onTertiary</item>
-        <item name="brandColor_colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
-        <item name="brandColor_colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
-        <item name="brandColor_background">@color/md_theme_light_background</item>
-        <item name="brandColor_onBackground">@color/md_theme_light_onBackground</item>
-    </style>
-
 
 </resources>
