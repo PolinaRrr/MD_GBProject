@@ -14,6 +14,8 @@ const val DAY_BEFORE_YESTERDAY = "dayBeforeYesterday"
 const val SURPRISE_IMAGE="https://cs14.pikabu.ru/post_img/2022/05/29/8/1653832275156942916.gif"
 const val MEDIA_TYPE_IMAGE ="image"
 const val MEDIA_TYPE_VIDEO ="video"
+const val CHOSEN_THEME = "chosen theme"
+const val LOCAL_SP = "local settings theme"
 
 
 class Utils {

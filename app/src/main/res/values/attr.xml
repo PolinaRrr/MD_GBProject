@@ -22,6 +22,8 @@
     <attr name="brandColor_onSurface" format="reference"/>
     <attr name="brandColor_surfaceVariant" format="reference"/>
     <attr name="brandColor_onSurfaceVariant" format="reference"/>
+    <attr name="brandColor_tint" format="reference"/>
+    <attr name="brandColor_tabTextColor" format="reference"/>
 
 </resources>
 

@@ -2,17 +2,36 @@
 <resources>
     <style name="BlueGreyStyleChip" parent="Widget.MaterialComponents.Chip.Choice" />
 
-    <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="tint">@color/blue_gray_900</item>
-    </style>
-
-    <style name="BlueGreyStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="BlueGreyThemeProject" parent="GrayThemeProject">
         <item name="boxStrokeColor">#37474F</item>
         <item name="helperTextEnabled">false</item>
         <item name="counterEnabled">false</item>
         <item name="errorTextColor">#263238</item>
+        <item name="brandColor_colorPrimary">@color/bg_theme_light_primary</item>
+        <item name="brandColor_colorSecondary">@color/bg_theme_light_secondary</item>
+        <item name="brandColor_colorPrimaryVariant">@color/bg_theme_light_primaryVariant</item>
+        <item name="brandColor_colorOnPrimary">@color/bg_theme_light_onPrimary</item>
+        <item name="brandColor_navigationBarColor">@color/bg_theme_light_navigationBarColor</item>
+        <item name="brandColor_colorPrimaryContainer">@color/bg_theme_light_primaryContainer</item>
+        <item name="brandColor_colorOnPrimaryContainer">@color/bg_theme_light_onPrimaryContainer</item>
+        <item name="brandColor_colorPrimaryInverse">@color/bg_theme_light_colorPrimaryInverse</item>
+        <item name="brandColor_colorOnSecondary">@color/bg_theme_light_onSecondary</item>
+        <item name="brandColor_colorSecondaryContainer">@color/bg_theme_light_secondaryContainer</item>
+        <item name="brandColor_colorOnSecondaryContainer">@color/bg_theme_light_onSecondaryContainer</item>
+        <item name="brandColor_colorTertiary">@color/bg_theme_light_tertiary</item>
+        <item name="brandColor_colorOnTertiary">@color/bg_theme_light_onTertiary</item>
+        <item name="brandColor_colorTertiaryContainer">@color/bg_theme_light_tertiaryContainer</item>
+        <item name="brandColor_colorOnTertiaryContainer">@color/bg_theme_light_onTertiaryContainer</item>
+        <item name="brandColor_background">@color/bg_theme_light_background</item>
+        <item name="brandColor_onBackground">@color/bg_theme_light_onBackground</item>
+        <item name="brandColor_surface">@color/bg_theme_light_surface</item>
+        <item name="brandColor_onSurface">@color/bg_theme_light_onSurface</item>
+        <item name="brandColor_surfaceVariant">@color/bg_theme_light_surfaceVariant</item>
+        <item name="brandColor_onSurfaceVariant">@color/bg_theme_light_onSurfaceVariant</item>
+        <item name="brandColor_tabTextColor">@color/bg_theme_light_surface</item>
 
     </style>
+
 
     <style name="TealThemeProject" parent="GrayThemeProject">
         <item name="brandColor">@color/teal_900</item>
@@ -37,6 +56,8 @@
         <item name="brandColor_onSurface">@color/teal_theme_light_onSurface</item>
         <item name="brandColor_surfaceVariant">@color/teal_theme_light_surfaceVariant</item>
         <item name="brandColor_onSurfaceVariant">@color/teal_theme_light_onSurfaceVariant</item>
+        <item name="brandColor_tabTextColor">@color/teal_theme_light_surface</item>
+
     </style>
 
     <style name="MagentaThemeProject" parent="GrayThemeProject">
@@ -62,5 +83,6 @@
         <item name="brandColor_onSurface">@color/mg_theme_light_onSurface</item>
         <item name="brandColor_surfaceVariant">@color/mg_theme_light_surfaceVariant</item>
         <item name="brandColor_onSurfaceVariant">@color/mg_theme_light_onSurfaceVariant</item>
+        <item name="brandColor_tabTextColor">@color/mg_theme_light_surface</item>
     </style>
 </resources>

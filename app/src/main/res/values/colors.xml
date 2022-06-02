@@ -23,6 +23,8 @@
 
     <color name="bg_theme_light_primary">#00658F</color>
     <color name="bg_theme_light_onPrimary">#FFFFFF</color>
+    <color name="bg_theme_light_primaryVariant">#85032E4C</color>
+    <color name="bg_theme_light_navigationBarColor">#076088</color>
     <color name="bg_theme_light_primaryContainer">#C4E7FF</color>
     <color name="bg_theme_light_onPrimaryContainer">#001E2E</color>
     <color name="bg_theme_light_secondary">#4F616E</color>
@@ -40,8 +42,12 @@
     <color name="bg_theme_light_surfaceVariant">#DDE3EA</color>
     <color name="bg_theme_light_onSurfaceVariant">#41484D</color>
     <color name="bg_theme_light_colorPrimaryInverse">#7FCFFF</color>
+    <color name="bg_theme_light_tint">#7FCFFF</color>
+
 
     <color name="bg_theme_dark_primary">#7FCFFF</color>
+    <color name="bg_theme_dark_navigationBarColor">#6DD4ED</color>
+    <color name="bg_theme_dark_primaryVariant">#B967D1DF</color>
     <color name="bg_theme_dark_onPrimary">#00344C</color>
     <color name="bg_theme_dark_primaryContainer">#004C6D</color>
     <color name="bg_theme_dark_onPrimaryContainer">#C4E7FF</color>
@@ -61,6 +67,7 @@
     <color name="bg_theme_dark_surfaceVariant">#41484D</color>
     <color name="bg_theme_dark_onSurfaceVariant">#C1C7CE</color>
     <color name="bg_theme_dark_colorPrimaryInverse">#00658F</color>
+    <color name="bg_theme_dark_tint">#00658F</color>
 
     <!-- Teal brand colors -->
 
@@ -90,6 +97,8 @@
     <color name="teal_theme_light_onSurface">#1A1C1C</color>
     <color name="teal_theme_light_surfaceVariant">#DBE5E2</color>
     <color name="teal_theme_light_onSurfaceVariant">#3F4947</color>
+    <color name="teal_theme_light_tint">#3F4947</color>
+
 
     <color name="teal_theme_dark_primary">#52DBCA</color>
     <color name="teal_theme_dark_primaryVariant">#B96EF6E2</color>
@@ -112,6 +121,8 @@
     <color name="teal_theme_dark_onSurface">#E0E3E1</color>
     <color name="teal_theme_dark_surfaceVariant">#3F4947</color>
     <color name="teal_theme_dark_onSurfaceVariant">#BFC9C6</color>
+    <color name="teal_theme_dark_tint">#BFC9C6</color>
+
 
 
     <!-- Magenta gray brand colors -->
@@ -142,6 +153,8 @@
     <color name="mg_theme_light_onSurface">#1E1B1D</color>
     <color name="mg_theme_light_surfaceVariant">#EDDEE7</color>
     <color name="mg_theme_light_onSurfaceVariant">#4D444B</color>
+    <color name="mg_theme_light_tint">#4D444B</color>
+
 
 
     <color name="mg_theme_dark_primary">#FCABF5</color>
@@ -165,5 +178,6 @@
     <color name="mg_theme_dark_onSurface">#E9E0E4</color>
     <color name="mg_theme_dark_surfaceVariant">#4D444B</color>
     <color name="mg_theme_dark_onSurfaceVariant">#D1C3CC</color>
+    <color name="mg_theme_dark_tint">#D1C3CC</color>
 
 </resources>
