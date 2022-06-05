@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:text="@string/themes"
-            android:clickable="false"/>
+            android:clickable="false" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

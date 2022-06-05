@@ -186,6 +186,7 @@ class PictureOfDayFragment : Fragment() {
             is PictureOfDayState.Success -> {
 
                 if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
+
                     binding.image.load(pictureOfDayState.pictureOfDayResponseData.url) {
                         //TODO скрасить загрузку
                     }

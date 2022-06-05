@@ -31,15 +31,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:baselineAlignBottom="false"
-        android:clickable="false"
+        android:cropToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout"
         app:srcCompat="@drawable/ic_no_image_vector"
         android:background="@drawable/round_outline"
-        android:outlineProvider="background"/>
+        android:clipToOutline="true"/>
 
     <include
         android:id="@+id/bottom_sheet"

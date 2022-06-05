@@ -26,13 +26,17 @@
         <item name="colorSurfaceVariant">?brandColor_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">?brandColor_onSurfaceVariant</item>
 
+
         <!-- Secondary brand color. -->
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?brandColor_colorPrimary</item>
         <item name="chipStyle">@style/BlueGreyStyleChip</item>
         <!-- Customize your theme here. -->
-
+        <item name="textAppearanceBody2">@style/brandTextAppearanceBody2</item>
+        <item name="textAppearanceHeadline1">@style/brandTextAppearanceHeadline1</item>
+        <item name="textAppearanceSubtitle1">@style/brandMgTextAppearanceSubtitle1</item>
+        <item name="textAppearanceCaption">@style/brandTextAppearanceCaption</item>
     </style>
     <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">?brandColor_tint</item>
