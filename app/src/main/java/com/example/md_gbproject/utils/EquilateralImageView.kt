@@ -15,4 +15,7 @@ class EquilateralImageView @JvmOverloads constructor(
         super.onMeasure(widthMeasureSpec, widthMeasureSpec)
 
     }
+
+
+
 }

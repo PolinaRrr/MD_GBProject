@@ -68,4 +68,24 @@
         <item name="brandColor_background">@color/mg_theme_dark_background</item>
         <item name="brandColor_onBackground">@color/mg_theme_dark_onBackground</item>
     </style>
+
+    <style name="BlueGreyThemeProject" parent="GrayThemeProject">
+        <item name="brandColor_colorPrimary">@color/bg_theme_dark_primary</item>
+        <item name="brandColor_colorSecondary">@color/bg_theme_dark_secondary</item>
+        <item name="brandColor_colorPrimaryVariant">@color/bg_theme_dark_primaryVariant</item>
+        <item name="brandColor_colorOnPrimary">@color/bg_theme_dark_onPrimary</item>
+        <item name="brandColor_navigationBarColor">@color/bg_theme_dark_navigationBarColor</item>
+        <item name="brandColor_colorPrimaryContainer">@color/bg_theme_dark_primaryContainer</item>
+        <item name="brandColor_colorOnPrimaryContainer">@color/bg_theme_dark_onPrimaryContainer</item>
+        <item name="brandColor_colorPrimaryInverse">@color/bg_theme_dark_colorPrimaryInverse</item>
+        <item name="brandColor_colorOnSecondary">@color/bg_theme_dark_onSecondary</item>
+        <item name="brandColor_colorSecondaryContainer">@color/bg_theme_dark_secondaryContainer</item>
+        <item name="brandColor_colorOnSecondaryContainer">@color/bg_theme_dark_onSecondaryContainer</item>
+        <item name="brandColor_colorTertiary">@color/bg_theme_dark_tertiary</item>
+        <item name="brandColor_colorOnTertiary">@color/bg_theme_dark_onTertiary</item>
+        <item name="brandColor_colorTertiaryContainer">@color/bg_theme_dark_tertiaryContainer</item>
+        <item name="brandColor_colorOnTertiaryContainer">@color/bg_theme_dark_onTertiaryContainer</item>
+        <item name="brandColor_background">@color/bg_theme_dark_background</item>
+        <item name="brandColor_onBackground">@color/bg_theme_dark_onBackground</item>
+    </style>
 </resources>

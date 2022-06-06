@@ -187,9 +187,8 @@ class PictureOfDayFragment : Fragment() {
 
                 if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
 
-                    binding.image.load(pictureOfDayState.pictureOfDayResponseData.url) {
-                        //TODO скрасить загрузку
-                    }
+                    binding.image.load(pictureOfDayState.pictureOfDayResponseData.url)
+
                 } else {
                     //отображение видео
                     Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)

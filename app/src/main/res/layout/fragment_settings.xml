@@ -23,7 +23,9 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:text="@string/themes"
-            android:clickable="false" />
+            android:clickable="false"
+            android:background="@drawable/round_outline"
+            />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -52,7 +54,9 @@
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        android:background="@drawable/round_outline"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
