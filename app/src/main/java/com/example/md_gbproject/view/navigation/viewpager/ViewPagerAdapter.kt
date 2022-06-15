@@ -7,7 +7,8 @@ import com.example.md_gbproject.view.navigation.EarthFragment
 import com.example.md_gbproject.view.navigation.MarsFragment
 import com.example.md_gbproject.view.navigation.SolarSystemFragment
 
-class ViewPagerAdapter(private val fragmentManager: FragmentManager): FragmentStatePagerAdapter(fragmentManager) {
+class ViewPagerAdapter(private val fragmentManager: FragmentManager) :
+    FragmentStatePagerAdapter(fragmentManager) {
 
     private val listFragments = listOf(
         EarthFragment.newInstance(),
@@ -21,5 +22,13 @@ class ViewPagerAdapter(private val fragmentManager: FragmentManager): FragmentSt
 
     override fun getItem(position: Int): Fragment {
         return listFragments[position]
+    }
+
+    override fun getPageTitle(position: Int): CharSequence {
+        return when (position) {
+            0 -> "Earth"
+            1 -> "Solar System"
+            else -> "Mars"
+        }
     }
 }
