@@ -19,7 +19,5 @@ class ApiActivity : AppCompatActivity() {
         binding.viewPagerTabLayout.getTabAt(1)?.setIcon(R.drawable.ic_solar_system_outline)
         binding.viewPagerTabLayout.getTabAt(2)?.setIcon(R.drawable.ic_planet_mars_outline)
 
-
-
     }
 }
