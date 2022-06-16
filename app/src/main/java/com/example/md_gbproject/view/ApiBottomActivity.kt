@@ -39,5 +39,11 @@ class ApiBottomActivity : AppCompatActivity() {
             true
         }
         binding.bottomNavigationView.selectedItemId = R.id.item_earth
+
+        val earthBadge = binding.bottomNavigationView.getOrCreateBadge(
+            R.id.item_earth
+        )
+        earthBadge.number = 13
+        earthBadge.backgroundColor = resources.getColor(R.color.blue_gray_100)
     }
 }
