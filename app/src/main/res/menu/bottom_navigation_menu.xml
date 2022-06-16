@@ -2,14 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/item_navigation_screen_1"
-            android:icon="@drawable/ic_archive"
-            android:title="@string/first_screen"/>
+            android:id="@+id/item_earth"
+            android:icon="@drawable/ic_planet_earth_outline"
+            android:title="Earth" />
 
         <item
-            android:id="@+id/item_navigation_screen_2"
-            android:icon="@drawable/ic_send"
-            android:title="@string/second_screen"/>
+            android:id="@+id/item_solar_system"
+            android:icon="@drawable/ic_solar_system_outline"
+            android:title="Solar System"/>
+
+        <item
+            android:id="@+id/item_mars"
+            android:icon="@drawable/ic_planet_mars_outline"
+            android:title="Mars"/>
     </group>
 
 </menu>
