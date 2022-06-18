@@ -9,15 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.bumptech.glide.Glide
+import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentPictureOfDayBinding
 import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
 import com.example.md_gbproject.viewmodel.PictureOfDayState
 import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.chip.Chip
 
-class PictureOfDayFragment : Fragment() {
+class PictureOfDayFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentPictureOfDayBinding? = null
     private val binding: FragmentPictureOfDayBinding
@@ -48,22 +48,9 @@ class PictureOfDayFragment : Fragment() {
     }
 
     private fun processChipGroupChecked() {
-        binding.chipGroup.setOnCheckedChangeListener { group, position ->
-            when (position) {
-                1 -> {
-                    viewModel.sendRequest()
-                }
-                2 -> {
-                    viewModel.sendRequestForYesterday()
-                }
-                3 -> {
-                    viewModel.sendRequestForBeforeYesterday()
-                }
-            }
-            group.findViewById<Chip>(position)?.let {
-
-            }
-        }
+        binding.chipToday?.setOnClickListener(this)
+        binding.chipYesterday?.setOnClickListener(this)
+        binding.chipTdby?.setOnClickListener(this)
     }
 
     private fun sheetBehaviorInit() {
@@ -134,5 +121,14 @@ class PictureOfDayFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() = PictureOfDayFragment()
+    }
+
+    override fun onClick(v: View) {
+        when(v.id){
+            R.id.chip_today->{viewModel.sendRequest() }
+            R.id.chip_yesterday->{viewModel.sendRequestForYesterday()}
+            R.id.chip_tdby->{viewModel.sendRequestForBeforeYesterday()}
+        }
+
     }
 }
