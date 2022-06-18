@@ -7,10 +7,13 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_apod"
+        android:id="@+id/card_earth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,57 +28,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="Photo by day"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_galaxy_foreground" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Title, secondary and supporting text -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_app_apod"
-                    android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/subtitle_app_apod"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_earth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_apod">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <!-- Media -->
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:contentDescription="Picture of Earth"
+                android:contentDescription="@string/title_poe"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_earth_foreground" />
 
@@ -89,14 +42,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Picture of Earth"
+                    android:text="@string/title_poe"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Explore Earth"
+                    android:text="@string/subtitle_poe"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -112,7 +65,10 @@
         android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_earth">
+        app:layout_constraintTop_toBottomOf="@+id/card_earth"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,7 +80,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="Picture of Solar System"
+                android:contentDescription="@string/title_poss"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_solar_system_foreground" />
 
@@ -138,13 +94,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Picture of Solar System"
+                    android:text="@string/title_poss"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Explore Solar System"
+                    android:text="@string/subtitle_poss"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -160,7 +116,10 @@
         android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_solar_system">
+        app:layout_constraintTop_toBottomOf="@+id/card_solar_system"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,7 +131,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="Picture of Mars"
+                android:contentDescription="@string/title_pom"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_mars_foreground" />
 
@@ -186,14 +145,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Picture of Mars"
+                    android:text="@string/title_pom"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Explore Mars"
+                    android:text="@string/subtitle_pom"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 

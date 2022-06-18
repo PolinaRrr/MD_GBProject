@@ -4,27 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout"
-        android:layout_width="@dimen/textInputLayout_width"
-        android:layout_height="wrap_content"
-        android:hint="@string/search_wikipedia"
-        app:counterEnabled="true"
-        app:counterMaxLength="30"
-        app:endIconContentDescription="content_description_end_icon"
-        app:endIconDrawable="@drawable/ic_wikipedia"
-        app:helperText="Search Wikipedia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/textInputEditText_height"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.example.md_gbproject.utils.EquilateralImageView
         android:id="@+id/image"
@@ -67,25 +47,6 @@
             android:layout_height="wrap_content"
             android:text="@string/tdby" />
     </com.google.android.material.chip.ChipGroup>
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="?android:background"
-        app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/ic_menu_bottom_bar" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/add"
-        app:borderWidth="@dimen/width_border"
-        app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat="@drawable/ic_add_fab"
-        app:tint="@color/blue_gray_900" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

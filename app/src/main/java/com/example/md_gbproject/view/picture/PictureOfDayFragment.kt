@@ -1,11 +1,8 @@
 package com.example.md_gbproject.view.picture
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -14,12 +11,9 @@ import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentPictureOfDayBinding
 import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
-import com.example.md_gbproject.utils.WIKI_DOMAIN
-import com.example.md_gbproject.view.MainActivity
 import com.example.md_gbproject.view.settings.SettingsFragment
 import com.example.md_gbproject.viewmodel.PictureOfDayState
 import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.chip.Chip
 
@@ -71,59 +65,10 @@ class PictureOfDayFragment : Fragment() {
             renderData(it)
         }
         viewModel.sendRequest()
-        requestToWiki()
         sheetBehaviorInit()
-        initOptionsMenu()
-        processFabClick()
         processChipGroupChecked()
     }
 
-    private fun initOptionsMenu(){
-        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
-        setHasOptionsMenu(true)
-    }
-
-    private fun requestToWiki() {
-        binding.textInputLayout.setEndIconOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
-            })
-        }
-    }
-
-    private fun processFabClick() {
-        binding.floatingActionButton.setOnClickListener {
-
-            if (isMain) {
-                binding.bottomAppBar.navigationIcon = null
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-                binding.floatingActionButton.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        requireContext(),
-                        R.drawable.ic_back
-                    )
-                )
-                binding.bottomAppBar.replaceMenu(R.menu.menu_navigation_bar)
-
-            } else {
-                binding.bottomAppBar.navigationIcon =
-                    (ContextCompat.getDrawable(
-                        requireContext(),
-                        R.drawable.ic_menu_bottom_bar
-                    )
-                            )
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                binding.floatingActionButton.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        requireContext(),
-                        R.drawable.ic_add_fab
-                    )
-                )
-                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
-            }
-            isMain = !isMain
-        }
-    }
 
     private fun processChipGroupChecked() {
         binding.chipGroup.setOnCheckedChangeListener { group, position ->

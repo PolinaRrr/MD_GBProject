@@ -21,4 +21,10 @@
     <string name="title_app_apod">Picture of the Day</string>
     <string name="subtitle_app_apod">Discover the cosmos!</string>
     <string name="description_app_apod">Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</string>
+    <string name="title_poss">Picture of Solar System</string>
+    <string name="subtitle_poss">Explore Solar System</string>
+    <string name="title_pom">Picture of Mars</string>
+    <string name="subtitle_pom">Explore Mars</string>
+    <string name="title_poe">Picture of Earth</string>
+    <string name="subtitle_poe">Explore Earth</string>
 </resources>
