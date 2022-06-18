@@ -2,16 +2,16 @@ package com.example.md_gbproject.view.picture
 
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.bumptech.glide.Glide
-import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentPictureOfDayBinding
 import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
-import com.example.md_gbproject.view.settings.SettingsFragment
 import com.example.md_gbproject.viewmodel.PictureOfDayState
 import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -26,7 +26,6 @@ class PictureOfDayFragment : Fragment() {
     private val viewModel: PictureOfDayViewModel by lazy {
         ViewModelProvider(this)[PictureOfDayViewModel::class.java]
     }
-    private var isMain = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,27 +36,6 @@ class PictureOfDayFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_bottom_bar, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.bottom_bar_favourites -> {
-
-            }
-            R.id.bottom_bar_settings -> {
-                requireActivity().supportFragmentManager.beginTransaction().
-                        replace(R.id.container,SettingsFragment.newInstance()).addToBackStack("").commit()
-            }
-            android.R.id.home -> {
-                BottomNavigationDrawerFragment.newInstance()
-                    .show(requireActivity().supportFragmentManager, "")
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -68,7 +46,6 @@ class PictureOfDayFragment : Fragment() {
         sheetBehaviorInit()
         processChipGroupChecked()
     }
-
 
     private fun processChipGroupChecked() {
         binding.chipGroup.setOnCheckedChangeListener { group, position ->

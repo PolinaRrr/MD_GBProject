@@ -6,7 +6,7 @@ import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.ActivityApiBinding
 import com.example.md_gbproject.view.navigation.viewpager.ViewPagerAdapter
 
-class ApiActivity : AppCompatActivity() {
+class ViewPagerFragment : AppCompatActivity() {
     lateinit var binding: ActivityApiBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

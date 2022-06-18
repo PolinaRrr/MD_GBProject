@@ -3,7 +3,10 @@ package com.example.md_gbproject.view.settings
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.ContextThemeWrapper
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.md_gbproject.R
@@ -11,12 +14,12 @@ import com.example.md_gbproject.databinding.FragmentSettingsBinding
 import com.example.md_gbproject.utils.CHOSEN_THEME
 import com.example.md_gbproject.utils.LOCAL_SP
 import com.google.android.material.tabs.TabLayout
+
 class SettingsFragment : Fragment() {
 
     private var _binding: FragmentSettingsBinding? = null
     private val binding: FragmentSettingsBinding
         get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +31,6 @@ class SettingsFragment : Fragment() {
         _binding = FragmentSettingsBinding.inflate(localInflater,container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,16 +61,7 @@ class SettingsFragment : Fragment() {
 
             }
         })
-
     }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_bottom_bar, menu)
-    }
-
-
-
 
     private fun getIdTheme(idTheme: Int): Int {
         return idTheme

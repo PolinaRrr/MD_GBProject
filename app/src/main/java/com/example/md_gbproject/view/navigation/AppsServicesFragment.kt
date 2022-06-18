@@ -1,16 +1,14 @@
 package com.example.md_gbproject.view.navigation
 
-import android.content.Context
 import android.os.Bundle
-import android.view.*
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentAppsServicesBinding
-import com.example.md_gbproject.utils.CHOSEN_THEME
-import com.example.md_gbproject.utils.LOCAL_SP
 
-class AppsServicesFragment : Fragment() {
+class AppsServicesFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentAppsServicesBinding? = null
     private val binding: FragmentAppsServicesBinding
@@ -22,45 +20,18 @@ class AppsServicesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val localContext: Context = ContextThemeWrapper(activity, getIdTheme(getCurrentIdTheme()))
-        val localInflater = inflater.cloneInContext(localContext)
-        _binding = FragmentAppsServicesBinding.inflate(localInflater,container, false)
+        _binding = FragmentAppsServicesBinding.inflate(inflater,container, false)
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
+        binding.cardEarth.setOnClickListener(this)
+        binding.cardSolarSystem.setOnClickListener(this)
+        binding.cardMars.setOnClickListener(this)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_bottom_bar, menu)
-    }
-
-
-
-
-    private fun getIdTheme(idTheme: Int): Int {
-        return idTheme
-    }
-
-    private fun getCurrentIdTheme(): Int {
-        val sharedPreferences =
-            requireActivity().getSharedPreferences(LOCAL_SP, AppCompatActivity.MODE_PRIVATE)
-        return sharedPreferences.getInt(CHOSEN_THEME, -1)
-    }
-
-    private fun setCurrentTheme(idTheme: Int) {
-        val sharedPreferences =
-            requireActivity().getSharedPreferences(LOCAL_SP, AppCompatActivity.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putInt(CHOSEN_THEME,idTheme)
-        editor.apply()
-    }
 
     override fun onDestroy() {
         _binding = null
@@ -70,5 +41,34 @@ class AppsServicesFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() = AppsServicesFragment()
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.card_earth -> {
+
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, EarthFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+
+            R.id.card_solar_system -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, SolarSystemFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+
+            R.id.card_mars -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, MarsFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+        }
     }
 }
