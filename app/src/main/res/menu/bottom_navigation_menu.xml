@@ -3,18 +3,18 @@
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/item_earth"
-            android:icon="@drawable/ic_planet_earth_outline"
-            android:title="Earth" />
+            android:icon="@drawable/ic_home_page"
+            android:title="@string/home" />
 
         <item
             android:id="@+id/item_solar_system"
-            android:icon="@drawable/ic_solar_system_outline"
-            android:title="Solar System"/>
+            android:icon="@drawable/ic_apps_services"
+            android:title="@string/services"/>
 
         <item
             android:id="@+id/item_mars"
-            android:icon="@drawable/ic_planet_mars_outline"
-            android:title="Mars"/>
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings"/>
     </group>
 
 </menu>

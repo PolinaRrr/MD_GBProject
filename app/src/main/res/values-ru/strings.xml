@@ -15,4 +15,6 @@
     <string name="teal_theme">Бирюзовая тема</string>
     <string name="magenta_theme">Пурпурная тема</string>
     <string name="themes">Themes</string>
+    <string name="home">Home</string>
+    <string name="services">Services</string>
 </resources>

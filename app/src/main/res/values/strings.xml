@@ -16,4 +16,6 @@
     <string name="teal_theme">Teal Theme</string>
     <string name="magenta_theme">Magenta Theme</string>
     <string name="themes">Themes</string>
+    <string name="home">Home</string>
+    <string name="services">Services</string>
 </resources>
