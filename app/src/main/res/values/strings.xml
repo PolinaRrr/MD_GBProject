@@ -18,4 +18,7 @@
     <string name="themes">Themes</string>
     <string name="home">Home</string>
     <string name="services">Services</string>
+    <string name="title_app_apod">Picture of the Day</string>
+    <string name="subtitle_app_apod">Discover the cosmos!</string>
+    <string name="description_app_apod">Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</string>
 </resources>
