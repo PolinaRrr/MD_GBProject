@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             R.id.item_home
         )
         earthBadge.number = 13
-        earthBadge.backgroundColor = resources.getColor(R.color.blue_gray_100)
 
     }
 

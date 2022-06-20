@@ -1,5 +1,6 @@
 package com.example.md_gbproject.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,6 +29,7 @@ class PictureOfDayViewModel(
             response: Response<PictureOfDayResponseData>
         ) {
             if (response.isSuccessful){
+                Log.d("@@@","Success ${response.body()}")
                 response.body()?.let {
                     liveData.postValue(PictureOfDayState.Success(it))
 
@@ -35,11 +37,12 @@ class PictureOfDayViewModel(
             }else{
                 liveData.postValue(PictureOfDayState.Error(Exception()))
 
+                Log.d("@@@","Error ")
             }
         }
 
         override fun onFailure(call: Call<PictureOfDayResponseData>, t: Throwable) {
-            //TODO
+            Log.d("@@@","Error $t")
         }
     }
 
@@ -48,6 +51,7 @@ class PictureOfDayViewModel(
         liveData.postValue(PictureOfDayState.Loading(null))
         //TODO
         pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY).enqueue(callback)
+    Log.d("@@@","${pictureOfTheDayRetrofitImpl.getRetrofit()}")
     }
 
     //отправка за вчера

@@ -1,14 +1,21 @@
 package com.example.md_gbproject.view.navigation
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import coil.load
+import com.bumptech.glide.Glide
 import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentSolarSystemBinding
 import com.example.md_gbproject.utils.CHOSEN_THEME
 import com.example.md_gbproject.utils.LOCAL_SP
+import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
+import com.example.md_gbproject.utils.SURPRISE_IMAGE
+import com.example.md_gbproject.viewmodel.PictureOfDayState
+import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
 
 class SolarSystemFragment : Fragment() {
 
@@ -22,20 +29,46 @@ class SolarSystemFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val localContext: Context = ContextThemeWrapper(activity, getIdTheme(getCurrentIdTheme()))
-        val localInflater = inflater.cloneInContext(localContext)
-        _binding = FragmentSolarSystemBinding.inflate(localInflater,container, false)
+        _binding = FragmentSolarSystemBinding.inflate(inflater,container, false)
         return binding.root
     }
 
+    private val viewModel: PictureOfDayViewModel by lazy {
+        ViewModelProvider(this)[PictureOfDayViewModel::class.java]
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
+        viewModel.getLiveData().observe(viewLifecycleOwner) {
+            renderData(it)
+        }
+        viewModel.sendRequestForBeforeYesterday()
     }
 
+    private fun renderData(pictureOfDayState: PictureOfDayState?) {
+
+        when (pictureOfDayState) {
+            is PictureOfDayState.Error -> {
+                Log.d("@@@","error ${pictureOfDayState.error}")
+                Glide.with(this).load(SURPRISE_IMAGE).into(binding.imageSolarSystem)
+            }
+            is PictureOfDayState.Loading -> {
+
+            }
+            is PictureOfDayState.Success -> {
+
+                if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
+
+                    binding.imageSolarSystem.load(pictureOfDayState.pictureOfDayResponseData.url)
+
+                } else {
+                    //отображение видео
+                    Glide.with(this).load(SURPRISE_IMAGE).into(binding.imageSolarSystem)
+                }
+
+            }
+        }
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_bottom_bar, menu)

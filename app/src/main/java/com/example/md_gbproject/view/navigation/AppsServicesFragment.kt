@@ -20,7 +20,7 @@ class AppsServicesFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAppsServicesBinding.inflate(inflater,container, false)
+        _binding = FragmentAppsServicesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -43,13 +43,14 @@ class AppsServicesFragment : Fragment(), View.OnClickListener {
         fun newInstance() = AppsServicesFragment()
     }
 
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.card_earth -> {
 
                 requireActivity().supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, EarthFragment.newInstance())
+                    .replace(R.id.fragment_container_view, EarthFragment.newInstance())
                     .addToBackStack("")
                     .commit()
             }
@@ -57,7 +58,7 @@ class AppsServicesFragment : Fragment(), View.OnClickListener {
             R.id.card_solar_system -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, SolarSystemFragment.newInstance())
+                    .replace(R.id.fragment_container_view, SolarSystemFragment.newInstance())
                     .addToBackStack("")
                     .commit()
             }
@@ -65,7 +66,7 @@ class AppsServicesFragment : Fragment(), View.OnClickListener {
             R.id.card_mars -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, MarsFragment.newInstance())
+                    .replace(R.id.fragment_container_view, MarsFragment.newInstance())
                     .addToBackStack("")
                     .commit()
             }
