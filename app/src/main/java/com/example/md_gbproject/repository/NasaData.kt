@@ -2,7 +2,7 @@ package com.example.md_gbproject.repository
 
 import com.google.gson.annotations.SerializedName
 
-data class PictureOfDayResponseData(
+data class NasaData(
     val date: String,
     val explanation: String,
     val hdurl: String,

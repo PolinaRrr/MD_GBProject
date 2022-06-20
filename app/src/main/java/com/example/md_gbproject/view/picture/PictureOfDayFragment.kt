@@ -13,8 +13,8 @@ import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentPictureOfDayBinding
 import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
-import com.example.md_gbproject.viewmodel.PictureOfDayState
-import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
+import com.example.md_gbproject.viewmodel.AppState
+import com.example.md_gbproject.viewmodel.AppViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class PictureOfDayFragment : Fragment(), View.OnClickListener {
@@ -23,8 +23,8 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
     private val binding: FragmentPictureOfDayBinding
         get() = _binding!!
 
-    private val viewModel: PictureOfDayViewModel by lazy {
-        ViewModelProvider(this)[PictureOfDayViewModel::class.java]
+    private val viewModel: AppViewModel by lazy {
+        ViewModelProvider(this)[AppViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -82,17 +82,17 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
         })
     }
 
-    private fun renderData(pictureOfDayState: PictureOfDayState) {
+    private fun renderData(pictureOfDayState: AppState) {
 
         when (pictureOfDayState) {
-            is PictureOfDayState.Error -> {
-                Log.d("@@@","error ${pictureOfDayState.error}")
+            is AppState.Error -> {
+                Log.d("@@@", "error ${pictureOfDayState.error}")
                 Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
             }
-            is PictureOfDayState.Loading -> {
+            is AppState.Loading -> {
 
             }
-            is PictureOfDayState.Success -> {
+            is AppState.Success -> {
 
                 if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
 
@@ -124,11 +124,16 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id){
-            R.id.chip_today->{viewModel.sendRequest() }
-            R.id.chip_yesterday->{viewModel.sendRequestForYesterday()}
-            R.id.chip_tdby->{viewModel.sendRequestForBeforeYesterday()}
+        when (v.id) {
+            R.id.chip_today -> {
+                viewModel.sendRequest()
+            }
+            R.id.chip_yesterday -> {
+                viewModel.sendRequestForYesterday()
+            }
+            R.id.chip_tdby -> {
+                viewModel.sendRequestForBeforeYesterday()
+            }
         }
-
     }
 }

@@ -18,22 +18,21 @@ class MainActivity : AppCompatActivity() {
         setTheme(getIdTheme(getCurrentIdTheme()))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.bottomNavigationView.setOnItemSelectedListener {
-                item->
-            when(item.itemId){
-                R.id.item_home->{
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.item_home -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container_view,
                         PictureOfDayFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
-                R.id.item_services->{
+                R.id.item_services -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container_view,
                         AppsServicesFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
-                R.id.item_settings->{
+                R.id.item_settings -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container_view,
                         SettingsFragment.newInstance()
@@ -55,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     private fun getIdTheme(idTheme: Int): Int {
         return idTheme
     }
+
     private fun getCurrentIdTheme(): Int {
         val sharedPreferences = getSharedPreferences(LOCAL_SP, AppCompatActivity.MODE_PRIVATE)
         return sharedPreferences.getInt(CHOSEN_THEME, -1)

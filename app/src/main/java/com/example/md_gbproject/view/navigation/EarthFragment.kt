@@ -12,8 +12,8 @@ import com.bumptech.glide.Glide
 import com.example.md_gbproject.databinding.FragmentEarthBinding
 import com.example.md_gbproject.utils.MEDIA_TYPE_IMAGE
 import com.example.md_gbproject.utils.SURPRISE_IMAGE
-import com.example.md_gbproject.viewmodel.PictureOfDayState
-import com.example.md_gbproject.viewmodel.PictureOfDayViewModel
+import com.example.md_gbproject.viewmodel.AppState
+import com.example.md_gbproject.viewmodel.AppViewModel
 
 class EarthFragment : Fragment() {
 
@@ -27,12 +27,12 @@ class EarthFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentEarthBinding.inflate(inflater,container, false)
+        _binding = FragmentEarthBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    private val viewModel: PictureOfDayViewModel by lazy {
-        ViewModelProvider(this)[PictureOfDayViewModel::class.java]
+    private val viewModel: AppViewModel by lazy {
+        ViewModelProvider(this)[AppViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,27 +43,26 @@ class EarthFragment : Fragment() {
         viewModel.sendRequest()
     }
 
-    private fun renderData(pictureOfDayState: PictureOfDayState?) {
+    private fun renderData(state: AppState?) {
 
-        when (pictureOfDayState) {
-            is PictureOfDayState.Error -> {
-                Log.d("@@@","error ${pictureOfDayState.error}")
+        when (state) {
+            is AppState.Error -> {
+                Log.d("@@@", "error ${state.error}")
                 Glide.with(this).load(SURPRISE_IMAGE).into(binding.imageEarth)
             }
-            is PictureOfDayState.Loading -> {
+            is AppState.Loading -> {
 
             }
-            is PictureOfDayState.Success -> {
+            is AppState.Success -> {
 
-                if (pictureOfDayState.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
+                if (state.pictureOfDayResponseData.mediaType == MEDIA_TYPE_IMAGE) {
 
-                    binding.imageEarth.load(pictureOfDayState.pictureOfDayResponseData.url)
+                    binding.imageEarth.load(state.pictureOfDayResponseData.url)
 
                 } else {
                     //отображение видео
                     Glide.with(this).load(SURPRISE_IMAGE).into(binding.imageEarth)
                 }
-
             }
         }
     }
