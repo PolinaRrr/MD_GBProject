@@ -15,6 +15,11 @@
             android:id="@+id/item_settings"
             android:icon="@drawable/ic_settings"
             android:title="@string/settings"/>
+
+        <item
+            android:id="@+id/item_layouts"
+            android:icon="@drawable/ic_layers"
+            android:title="@string/layouts"/>
     </group>
 
 </menu>

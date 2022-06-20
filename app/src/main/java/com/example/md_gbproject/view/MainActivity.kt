@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
                         SettingsFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
+                R.id.item_layouts -> {
+                    supportFragmentManager.beginTransaction().replace(
+                        R.id.fragment_container_view,
+                        LayoutsFragment.newInstance()
+                    ).addToBackStack("").commit()
+
+                }
             }
             true
         }

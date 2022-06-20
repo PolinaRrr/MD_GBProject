@@ -15,4 +15,8 @@
     <string name="subtitle_pom">Explore Mars</string>
     <string name="title_poe">Picture of Earth</string>
     <string name="subtitle_poe">Explore Earth</string>
+    <string name="layouts">Layouts</string>
+    <string name="constraintlayout">ConstraintLayout</string>
+    <string name="coordinatorlayout">CoordinatorLayout</string>
+    <string name="motionlayout">MotionLayout</string>
 </resources>
