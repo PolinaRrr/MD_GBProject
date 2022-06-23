@@ -22,7 +22,15 @@
     </ConstraintSet>
 
     <Transition
-        app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@layout/fragment_motion_end"
+        app:constraintSetStart="@layout/fragment_motion_start"
         />
+    <Transition
+        app:constraintSetStart="@layout/fragment_motion_end"
+        app:constraintSetEnd="@layout/fragment_motion_start"
+        app:autoTransition="animateToStart" />
+    <Transition
+        app:constraintSetStart="@+id/end"
+        app:constraintSetEnd="@+id/start"
+        app:autoTransition="animateToEnd" />
 </MotionScene>

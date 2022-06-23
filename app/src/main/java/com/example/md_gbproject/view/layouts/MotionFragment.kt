@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.md_gbproject.databinding.FragmentMotionStartBinding
+import com.example.md_gbproject.databinding.FragmentMotionEndBinding
 import com.example.md_gbproject.viewmodel.AppViewModel
 
 class MotionFragment : Fragment() {
 
-    private var _binding: FragmentMotionStartBinding? = null
-    private val binding: FragmentMotionStartBinding
+    private var _binding: FragmentMotionEndBinding? = null
+    private val binding: FragmentMotionEndBinding
         get() = _binding!!
 
 
@@ -21,7 +21,7 @@ class MotionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMotionStartBinding.inflate(inflater, container, false)
+        _binding = FragmentMotionEndBinding.inflate(inflater, container, false)
         return binding.root
     }
 
