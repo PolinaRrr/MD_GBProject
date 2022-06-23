@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:fitsSystemWindows="true"
         android:id="@+id/appbar_layout"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -22,7 +22,7 @@
             app:toolbarId="@+id/toolbar"
             app:contentScrim="?attr/colorPrimary"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            android:background="@drawable/ic_wikipedia">
+            android:background="@drawable/ic_solar_system_outline">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         android:id="@+id/material_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_add"
+        app:srcCompat="@drawable/ic_add"
         android:text="+"
         app:layout_anchor="@id/appbar_layout"
         app:layout_anchorGravity="bottom|end"/>

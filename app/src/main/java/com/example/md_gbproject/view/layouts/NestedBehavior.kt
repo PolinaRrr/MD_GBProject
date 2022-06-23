@@ -2,6 +2,7 @@ package com.example.md_gbproject.view.layouts
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
@@ -24,12 +25,13 @@ class NestedBehavior(
         child: View,
         dependency: View
     ): Boolean {
-        //if (dependency is AppBarLayout) {
-//            val appbar = dependency as AppBarLayout
-//            //
-//        } else {
-//
-//        }
+        Log.d("@@@", "$child")
+        if (dependency is AppBarLayout) {
+            val appbar = dependency as AppBarLayout
+            child.y = appbar.height.toFloat() + appbar.y
+        } else {
+
+        }
         return super.onDependentViewChanged(parent, child, dependency)
     }
 }
