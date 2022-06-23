@@ -1,4 +1,4 @@
-package com.example.md_gbproject.view
+package com.example.md_gbproject.view.layouts
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,6 +51,7 @@ class LayoutsFragment : Fragment(), View.OnClickListener {
                     .replace(R.id.fragment_container_view, ConstraintFragment.newInstance())
                     .addToBackStack("")
                     .commit()
+
             }
 
             R.id.card_coordinator -> {

@@ -1,4 +1,4 @@
-package com.example.md_gbproject.view
+package com.example.md_gbproject.view.layouts
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.md_gbproject.databinding.FragmentCoordinatorBinding
+import com.example.md_gbproject.databinding.FragmentConstraintBinding
 import com.example.md_gbproject.viewmodel.AppViewModel
 
-class CoordinatorFragment : Fragment() {
+class ConstraintFragment : Fragment() {
 
-    private var _binding: FragmentCoordinatorBinding? = null
-    private val binding: FragmentCoordinatorBinding
+    private var _binding: FragmentConstraintBinding? = null
+    private val binding: FragmentConstraintBinding
         get() = _binding!!
 
 
@@ -21,7 +21,7 @@ class CoordinatorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCoordinatorBinding.inflate(inflater, container, false)
+        _binding = FragmentConstraintBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -43,6 +43,6 @@ class CoordinatorFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = CoordinatorFragment()
+        fun newInstance() = ConstraintFragment()
     }
 }
