@@ -2,35 +2,14 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@+id/image_earth" />
-    </ConstraintSet>
-
-    <ConstraintSet android:id="@+id/end">
-        <Constraint android:id="@id/image_earth"
-            app:layout_editor_absoluteY="0dp"
-            android:layout_height="200dp"
-            app:layout_editor_absoluteX="214dp"
-            android:layout_width="200dp" />
-        <Constraint
-            android:layout_height="200dp"
-            app:layout_editor_absoluteX="118dp"
-            android:layout_marginTop="164dp"
-            android:layout_width="200dp"
-            app:layout_constraintTop_toBottomOf="@+id/image_earth"
-            android:id="@+id/image_alien" />
-    </ConstraintSet>
-
     <Transition
         app:constraintSetEnd="@layout/fragment_motion_end"
         app:constraintSetStart="@layout/fragment_motion_start"
-        />
+        app:duration="1000">
+        <OnClick app:targetId="@id/image_earth"/>
+    </Transition>
+
     <Transition
         app:constraintSetStart="@layout/fragment_motion_end"
-        app:constraintSetEnd="@layout/fragment_motion_start"
-        app:autoTransition="animateToStart" />
-    <Transition
-        app:constraintSetStart="@+id/end"
-        app:constraintSetEnd="@+id/start"
-        app:autoTransition="animateToEnd" />
+        app:constraintSetEnd="@layout/fragment_motion_start" />
 </MotionScene>
