@@ -34,6 +34,10 @@ class MotionFragment : Fragment() {
         binding.imageEarth.setOnClickListener{
 
         }
+
+        binding.imageAlien.setOnClickListener {
+
+        }
     }
 
 

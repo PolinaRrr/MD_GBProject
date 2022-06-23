@@ -2,14 +2,35 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <Transition
         app:constraintSetEnd="@layout/fragment_motion_end"
         app:constraintSetStart="@layout/fragment_motion_start"
-        app:duration="1000">
+        app:pathMotionArc="flip"
+        app:duration="3000">
         <OnClick app:targetId="@id/image_earth"/>
     </Transition>
 
     <Transition
+        app:constraintSetEnd="@layout/fragment_motion_start"
         app:constraintSetStart="@layout/fragment_motion_end"
-        app:constraintSetEnd="@layout/fragment_motion_start" />
+        app:duration="3000">
+        <OnClick app:targetId="@id/image_earth"/>
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_motion_start"
+        app:constraintSetStart="@layout/fragment_motion_end"
+        app:pathMotionArc="flip"
+        app:duration="3000">
+        <OnClick app:targetId="@id/image_alien"/>
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_motion_end"
+        app:constraintSetStart="@layout/fragment_motion_start"
+        app:duration="3000">
+        <OnClick app:targetId="@id/image_alien"/>
+    </Transition>
+
 </MotionScene>
