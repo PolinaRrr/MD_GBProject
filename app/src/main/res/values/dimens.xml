@@ -9,4 +9,5 @@
     <dimen name="width_border">2dp</dimen>
     <dimen name="textInputEditText_height">91dp</dimen>
     <dimen name="textInputLayout_width">0dp</dimen>
+    <dimen name="margin_top_button">25dp</dimen>
 </resources>

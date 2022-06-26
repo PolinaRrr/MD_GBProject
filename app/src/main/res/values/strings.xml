@@ -55,4 +55,6 @@ The contents of Ford Prefect’s satchel were quite interesting in fact and woul
 This had about a hundred tiny flat press buttons and a screen about four inches square on which any one of a million “pages” could be summoned at a moment’s notice. It looked insanely complicated, and this was one of the reasons why the snug plastic cover it fitted into had the words Don’t Panic printed on it in large friendly letters.\n
 The other reason was that this device was in fact that most remarkable of all books ever to come out of the great publishing corporations of Ursa Minor—The Hitchhiker’s Guide to the Galaxy. \n
 The reason why it was published in the form of a micro sub meson electronic component is that if it were printed in normal book form, an interstellar hitch hiker would require several inconveniently large buildings to carry it around in.\n\n\n</string>
+    <string name="animation">Animation</string>
+    <string name="animate">Animate</string>
 </resources>

@@ -12,9 +12,9 @@
             android:title="@string/services"/>
 
         <item
-            android:id="@+id/item_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/settings"/>
+            android:id="@+id/item_animation"
+            android:icon="@drawable/ic_animation"
+            android:title="@string/animation"/>
 
         <item
             android:id="@+id/item_layouts"

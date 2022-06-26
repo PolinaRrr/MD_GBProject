@@ -6,10 +6,10 @@ import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.ActivityMainBinding
 import com.example.md_gbproject.utils.CHOSEN_THEME
 import com.example.md_gbproject.utils.LOCAL_SP
+import com.example.md_gbproject.view.animation.AnimationFragment
 import com.example.md_gbproject.view.layouts.LayoutsFragment
 import com.example.md_gbproject.view.navigation.AppsServicesFragment
 import com.example.md_gbproject.view.picture.PictureOfDayFragment
-import com.example.md_gbproject.view.settings.SettingsFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,10 +33,10 @@ class MainActivity : AppCompatActivity() {
                         AppsServicesFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
-                R.id.item_settings -> {
+                R.id.item_animation -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container_view,
-                        SettingsFragment.newInstance()
+                        AnimationFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
                 R.id.item_layouts -> {
