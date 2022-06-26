@@ -22,11 +22,27 @@ class AnimationFragment : Fragment() {
         _binding = FragmentAnimationBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.cardConstraint.setOnClickListener(this)
-//        binding.cardCoordinator.setOnClickListener(this)
-//        binding.cardMotion.setOnClickListener(this)
+        binding.buttonAnimate01.setOnClickListener {
+            if (binding.buttonAnimate02.visibility == View.INVISIBLE) {
+                binding.buttonAnimate02.visibility = View.VISIBLE
+                binding.buttonAnimate01.visibility = View.INVISIBLE
+            }else{
+                binding.buttonAnimate01.visibility = View.VISIBLE
+            }
+        }
+        binding.buttonAnimate02.setOnClickListener {
+            if (binding.buttonAnimate01.visibility == View.INVISIBLE) {
+                binding.buttonAnimate01.visibility = View.VISIBLE
+                binding.buttonAnimate02.visibility = View.INVISIBLE
+
+            }else{
+                binding.buttonAnimate02.visibility = View.VISIBLE
+            }
+        }
+
     }
 
 

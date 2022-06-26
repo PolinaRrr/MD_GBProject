@@ -14,16 +14,19 @@
         android:layout_marginTop="@dimen/margin_top_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_animate_0"
+        android:id="@+id/button_animate_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top_button"
+        android:text="@string/transition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_animate_01" />
+        app:layout_constraintTop_toBottomOf="@+id/button_animate_01"
+        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
