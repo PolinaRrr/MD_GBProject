@@ -22,7 +22,7 @@
         android:background="@drawable/round_outline"
         android:src="@drawable/ic_alien_boy"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        tools:layout_editor_absoluteX="106dp" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

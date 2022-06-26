@@ -31,13 +31,7 @@ class MotionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imageEarth.setOnClickListener{
-
-        }
-
-        binding.imageAlien.setOnClickListener {
-
-        }
+        
     }
 
 
