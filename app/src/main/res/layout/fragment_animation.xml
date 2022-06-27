@@ -75,7 +75,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/explode"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_explode_foreground" />
+                app:srcCompat="@drawable/ic_explode" />
 
             <LinearLayout
                 android:layout_width="match_parent"

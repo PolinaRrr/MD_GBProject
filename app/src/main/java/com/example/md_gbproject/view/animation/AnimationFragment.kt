@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.transition.*
 import com.example.md_gbproject.R
 import com.example.md_gbproject.databinding.FragmentAnimationBinding
 
@@ -29,6 +28,7 @@ class AnimationFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding.cardTransition.setOnClickListener(this)
 
+        binding.cardExplode.setOnClickListener(this)
     }
 
 
@@ -40,20 +40,6 @@ class AnimationFragment : Fragment(), View.OnClickListener {
     companion object {
         @JvmStatic
         fun newInstance() = AnimationFragment()
-    }
-
-    private fun changeTransition(){
-        val transitionBounds = ChangeBounds()
-        transitionBounds.duration = 5000
-        val transitionFade = Fade()
-        transitionFade.duration = 5000
-        val transitionSlide = Slide()
-        transitionSlide.duration = 5000
-        val transitionSet = TransitionSet()
-        transitionSet.addTransition(transitionFade)
-        transitionSet.addTransition(transitionBounds)
-        transitionSet.addTransition(transitionSlide)
-        TransitionManager.beginDelayedTransition(binding.root,transitionSet)
     }
 
 
@@ -69,13 +55,13 @@ class AnimationFragment : Fragment(), View.OnClickListener {
 
             }
 
-//            R.id.card_coordinator -> {
-//                requireActivity().supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragment_container_view, CoordinatorFragment.newInstance())
-//                    .addToBackStack("")
-//                    .commit()
-//            }
+            R.id.card_explode -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container_view, ExplodeFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
 //
 //            R.id.card_motion -> {
 //                requireActivity().supportFragmentManager
