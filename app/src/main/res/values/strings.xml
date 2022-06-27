@@ -58,4 +58,6 @@ The reason why it was published in the form of a micro sub meson electronic comp
     <string name="animation">Animation</string>
     <string name="animate">Animate</string>
     <string name="transition">Transition</string>
+    <string name="explode">Explode</string>
+    <string name="push">PUSH</string>
 </resources>
