@@ -75,8 +75,8 @@ class ExplodeFragment : Fragment() {
                 }
                 transitionExplode.duration = 5000
                 transitionExplode.excludeTarget(button, true)
-                val transitionFadeButton = Fade()
-                transitionFadeButton.duration = 999999
+                val transitionFadeButton = Fade().addTarget(button)
+                transitionFadeButton.duration = 5000
                 val transitionSet = TransitionSet()
                 transitionSet.addTransition(transitionFadeButton)
                 transitionSet.addTransition(transitionExplode)
