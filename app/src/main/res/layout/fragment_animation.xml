@@ -97,7 +97,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_motion"
+        android:id="@+id/card_photo_transition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -117,9 +117,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="@string/motionlayout"
+                android:contentDescription="@string/photo_transition"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_motion_layout" />
+                app:srcCompat="@drawable/ic_photo_transition" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/motionlayout"
+                    android:text="@string/photo_transition"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
             </LinearLayout>

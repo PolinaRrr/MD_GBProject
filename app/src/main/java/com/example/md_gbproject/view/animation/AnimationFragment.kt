@@ -27,8 +27,8 @@ class AnimationFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.cardTransition.setOnClickListener(this)
-
         binding.cardExplode.setOnClickListener(this)
+        binding.cardPhotoTransition.setOnClickListener((this))
     }
 
 
@@ -62,14 +62,14 @@ class AnimationFragment : Fragment(), View.OnClickListener {
                     .addToBackStack("")
                     .commit()
             }
-//
-//            R.id.card_motion -> {
-//                requireActivity().supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragment_container_view, MotionFragment.newInstance())
-//                    .addToBackStack("")
-//                    .commit()
-           // }
+
+            R.id.card_photo_transition -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container_view, PhotoTransitionFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
         }
     }
 }

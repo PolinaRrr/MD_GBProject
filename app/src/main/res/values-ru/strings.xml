@@ -50,4 +50,5 @@ The Hitchhiker’s Guide to the Galaxy sells rather better than the Encyclopedia
     <string name="transition">Transition</string>
     <string name="explode">Explode</string>
     <string name="push">PUSH</string>
+    <string name="photo_transition">Photo Transition</string>
 </resources>
