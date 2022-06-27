@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.transition.ChangeBounds
-import androidx.transition.Fade
-import androidx.transition.TransitionManager
-import androidx.transition.TransitionSet
+import androidx.transition.*
 import com.example.md_gbproject.databinding.FragmentAnimationBinding
 
 class AnimationFragment : Fragment() {
@@ -69,9 +66,12 @@ class AnimationFragment : Fragment() {
         transitionBounds.duration = 5000
         val transitionFade = Fade()
         transitionFade.duration = 5000
+        val transitionSlide = Slide()
+        transitionSlide.duration = 5000
         val transitionSet = TransitionSet()
         transitionSet.addTransition(transitionFade)
         transitionSet.addTransition(transitionBounds)
+        transitionSet.addTransition(transitionSlide)
         TransitionManager.beginDelayedTransition(binding.root,transitionSet)
     }
 
