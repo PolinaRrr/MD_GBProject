@@ -42,10 +42,10 @@ class PhotoTransitionFragment : Fragment() {
         binding.photoTransition.setOnClickListener {
             isOpen = !isOpen
             val transitionBounds = ChangeBounds()
-            transitionBounds.duration = 5000
+            transitionBounds.duration = 3000
 
             val transitionImage = ChangeImageTransform()
-            transitionImage.duration = 5000
+            transitionImage.duration = 3000
 
             val transitionSet = TransitionSet()
             transitionSet.addTransition(transitionImage)
@@ -64,11 +64,8 @@ class PhotoTransitionFragment : Fragment() {
             } else {
                 ConstraintLayout.LayoutParams.WRAP_CONTENT
             }
-
-
             binding.photoTransition.layoutParams = params
         }
-
     }
 
     override fun onDestroy() {

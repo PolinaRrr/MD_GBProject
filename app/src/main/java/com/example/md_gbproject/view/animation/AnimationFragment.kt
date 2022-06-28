@@ -28,7 +28,8 @@ class AnimationFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding.cardTransition.setOnClickListener(this)
         binding.cardExplode.setOnClickListener(this)
-        binding.cardPhotoTransition.setOnClickListener((this))
+        binding.cardPhotoTransition.setOnClickListener(this)
+        binding.cardObjectAnimator.setOnClickListener(this)
     }
 
 
@@ -70,6 +71,16 @@ class AnimationFragment : Fragment(), View.OnClickListener {
                     .addToBackStack("")
                     .commit()
             }
+
+            R.id.card_object_animator -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container_view, ObjectAnimatorFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+
+
         }
     }
 }
