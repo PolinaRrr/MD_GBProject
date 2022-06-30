@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.example.md_gbproject.data.RecycleData
 import com.example.md_gbproject.databinding.FragmentRecycleBinding
+import com.example.md_gbproject.repository.ItemTouchHelperCallback
 import com.example.md_gbproject.repository.OnListItemClickListener
 import com.example.md_gbproject.utils.TYPE_ITEM_EARTH
 import com.example.md_gbproject.utils.TYPE_ITEM_HEADER
@@ -39,6 +41,7 @@ class RecycleFragment : Fragment(),OnListItemClickListener {
         adapter = RecycleFragmentAdapter(this)
         adapter.setList(list)
         binding.mainRecycleView.adapter = adapter
+        ItemTouchHelper(ItemTouchHelperCallback(adapter)).attachToRecyclerView(binding.mainRecycleView)
     }
 
     override fun onDestroy() {
@@ -52,7 +55,6 @@ class RecycleFragment : Fragment(),OnListItemClickListener {
     }
 
     override fun onItemClick(data: RecycleData) {
-        TODO("Not yet implemented")
     }
 
     override fun onAddClick(position: Int) {

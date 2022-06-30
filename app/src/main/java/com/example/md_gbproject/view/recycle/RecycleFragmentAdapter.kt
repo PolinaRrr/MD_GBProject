@@ -8,6 +8,7 @@ import com.example.md_gbproject.data.RecycleData
 import com.example.md_gbproject.databinding.FragmentEarthRecycleBinding
 import com.example.md_gbproject.databinding.FragmentMarsRecycleBinding
 import com.example.md_gbproject.databinding.FragmentRecycleHeaderBinding
+import com.example.md_gbproject.repository.ItemTouchHelperAdapter
 import com.example.md_gbproject.repository.OnListItemClickListener
 import com.example.md_gbproject.utils.DESCRIPTION_MARS
 import com.example.md_gbproject.utils.TYPE_ITEM_EARTH
@@ -19,7 +20,7 @@ import kotlin.math.min
 class RecycleFragmentAdapter(
     private var onListItemClickListener: OnListItemClickListener
 ) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(),ItemTouchHelperAdapter {
 
     private lateinit var list: MutableList<RecycleData>
 
@@ -143,6 +144,18 @@ class RecycleFragmentAdapter(
                 recycleHeader.text = data.title
             }
         }
+    }
+
+    override fun onItemMove(fromPosition: Int, toPosition: Int) {
+        list.removeAt(fromPosition).apply {
+            list.add(toPosition, this)
+        }
+        notifyItemMoved(fromPosition,toPosition)
+    }
+
+    override fun onItemDismiss(position: Int) {
+        list.removeAt(position)
+        notifyItemRemoved(position)
     }
 
 
