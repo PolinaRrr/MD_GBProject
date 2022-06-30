@@ -14,9 +14,10 @@ const val MEDIA_TYPE_IMAGE = "image"
 const val MEDIA_TYPE_VIDEO = "video"
 const val CHOSEN_THEME = "chosen theme"
 const val LOCAL_SP = "local settings theme"
-const val TYPE_ITEM_EARTH = 1
-const val TYPE_ITEM_MARS = 2
-const val TYPE_ITEM_HEADER = 3
+const val TYPE_ITEM_EARTH = 2
+const val TYPE_ITEM_MARS = 3
+const val TYPE_ITEM_HEADER = 1
+const val DESCRIPTION_MARS="Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war. Mars is a terrestrial planet with a thin atmosphere, and has a crust primarily composed of elements similar to Earth's crust, as well as a core made of iron and nickel. Mars has surface features such as impact craters, valleys, dunes, and polar ice caps. It also has two small and irregularly shaped moons, Phobos and Deimos."
 
 
 class Utils {

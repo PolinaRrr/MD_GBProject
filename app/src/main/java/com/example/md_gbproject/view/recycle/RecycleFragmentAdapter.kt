@@ -9,10 +9,12 @@ import com.example.md_gbproject.databinding.FragmentEarthRecycleBinding
 import com.example.md_gbproject.databinding.FragmentMarsRecycleBinding
 import com.example.md_gbproject.databinding.FragmentRecycleHeaderBinding
 import com.example.md_gbproject.repository.OnListItemClickListener
+import com.example.md_gbproject.utils.DESCRIPTION_MARS
 import com.example.md_gbproject.utils.TYPE_ITEM_EARTH
 import com.example.md_gbproject.utils.TYPE_ITEM_HEADER
 import com.example.md_gbproject.utils.TYPE_ITEM_MARS
-
+import kotlin.math.max
+import kotlin.math.min
 
 class RecycleFragmentAdapter(
     private var onListItemClickListener: OnListItemClickListener
@@ -20,6 +22,8 @@ class RecycleFragmentAdapter(
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var list: MutableList<RecycleData>
+
+    private var isOpenDescription = false
 
     fun setList(newList: List<RecycleData>) {
 
@@ -95,25 +99,39 @@ class RecycleFragmentAdapter(
             FragmentMarsRecycleBinding.bind(itemView).apply {
                 titleMarsRecycle.text = data.title
                 descriptionMars.text = data.description
-                supportingTextMars.text = data.description
+                supportingTextMars.text = DESCRIPTION_MARS
                 recycleMarsButtonAdd.setOnClickListener {
                     onListItemClickListener.onAddClick(layoutPosition)
                 }
                 recycleMarsButtonDelete.setOnClickListener {
                     onListItemClickListener.onRemoveClick(layoutPosition)
                 }
-                recycleMarsButtonMoveDown.setOnClickListener{
+                recycleMarsButtonMoveDown.setOnClickListener {
+                    val newPosition=min(layoutPosition + 1, list.size-1)
                     list.removeAt(layoutPosition).apply {
-                        list.add(layoutPosition+1,this)
+                        list.add(newPosition, this).apply {
+                            notifyItemMoved(layoutPosition, newPosition)
+                        }
                     }
-                    notifyItemMoved(layoutPosition,layoutPosition+1)
-                }
-                recycleMarsButtonMoveUp.setOnClickListener{
-                    list.removeAt(layoutPosition).apply {
-                        list.add(layoutPosition-1,this)
-                    }
-                    notifyItemMoved(layoutPosition,layoutPosition-1)
 
+                }
+                recycleMarsButtonMoveUp.setOnClickListener {
+
+                    val newPosition=max(layoutPosition - 1, 1)
+                    list.removeAt(layoutPosition).apply {
+                        list.add(newPosition, this)
+                        notifyItemMoved(layoutPosition, newPosition)
+                    }
+
+                }
+                recycleMarsImage.setOnClickListener {
+                    isOpenDescription = !isOpenDescription
+                    if (isOpenDescription) {
+                        supportingTextMars.visibility = View.GONE
+
+                    } else {
+                        supportingTextMars.visibility = View.VISIBLE
+                    }
                 }
             }
         }
@@ -126,4 +144,6 @@ class RecycleFragmentAdapter(
             }
         }
     }
+
+
 }
