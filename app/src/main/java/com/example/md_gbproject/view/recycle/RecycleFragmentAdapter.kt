@@ -7,11 +7,34 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.md_gbproject.data.RecycleData
 import com.example.md_gbproject.databinding.FragmentEarthRecycleBinding
 import com.example.md_gbproject.databinding.FragmentMarsRecycleBinding
+import com.example.md_gbproject.databinding.FragmentRecycleHeaderBinding
+import com.example.md_gbproject.repository.OnListItemClickListener
 import com.example.md_gbproject.utils.TYPE_ITEM_EARTH
+import com.example.md_gbproject.utils.TYPE_ITEM_HEADER
 import com.example.md_gbproject.utils.TYPE_ITEM_MARS
 
-class RecycleFragmentAdapter(private var list: List<RecycleData>) :
+
+class RecycleFragmentAdapter(
+    private var onListItemClickListener: OnListItemClickListener
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private lateinit var list: List<RecycleData>
+
+    fun setList(newList: List<RecycleData>) {
+
+        this.list = newList
+    }
+
+    fun setAddToList(newList: List<RecycleData>, position: Int) {
+        this.list = newList
+        notifyItemChanged(position)
+    }
+
+    fun setRemoveToList(newList: List<RecycleData>, position: Int) {
+        this.list = newList
+        notifyItemRemoved(position)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -23,6 +46,10 @@ class RecycleFragmentAdapter(private var list: List<RecycleData>) :
                 val view = FragmentMarsRecycleBinding.inflate(LayoutInflater.from(parent.context))
                 MarsViewHolder(view.root)
             }
+            TYPE_ITEM_HEADER -> {
+                val view = FragmentRecycleHeaderBinding.inflate(LayoutInflater.from(parent.context))
+                HeaderViewHolder(view.root)
+            }
             else -> {
                 val view = FragmentEarthRecycleBinding.inflate(LayoutInflater.from(parent.context))
                 EarthViewHolder(view.root)
@@ -32,12 +59,15 @@ class RecycleFragmentAdapter(private var list: List<RecycleData>) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-        when(getItemViewType(position)){
+        when (getItemViewType(position)) {
             TYPE_ITEM_EARTH -> {
                 (holder as EarthViewHolder).bindText(list[position])
             }
             TYPE_ITEM_MARS -> {
                 (holder as MarsViewHolder).bindText(list[position])
+            }
+            TYPE_ITEM_HEADER -> {
+                (holder as HeaderViewHolder).bindText(list[position])
             }
         }
     }
@@ -52,7 +82,7 @@ class RecycleFragmentAdapter(private var list: List<RecycleData>) :
 
     class EarthViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        fun bindText(data: RecycleData){
+        fun bindText(data: RecycleData) {
             FragmentEarthRecycleBinding.bind(itemView).apply {
                 titleEarthRecycle.text = data.title
                 descriptionEarth.text = data.description
@@ -60,12 +90,26 @@ class RecycleFragmentAdapter(private var list: List<RecycleData>) :
         }
     }
 
-    class MarsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bindText(data: RecycleData){
+    inner class MarsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bindText(data: RecycleData) {
             FragmentMarsRecycleBinding.bind(itemView).apply {
                 titleMarsRecycle.text = data.title
                 descriptionMars.text = data.description
                 supportingTextMars.text = data.description
+                recycleMarsButtonAdd.setOnClickListener {
+                    onListItemClickListener.onAddClick(layoutPosition)
+                }
+                recycleMarsButtonDelete.setOnClickListener {
+                    onListItemClickListener.onRemoveClick(layoutPosition)
+                }
+            }
+        }
+    }
+
+    class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bindText(data: RecycleData) {
+            FragmentRecycleHeaderBinding.bind(itemView).apply {
+                recycleHeader.text = data.title
             }
         }
     }

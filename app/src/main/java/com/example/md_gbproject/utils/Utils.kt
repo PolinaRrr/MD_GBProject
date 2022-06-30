@@ -16,6 +16,7 @@ const val CHOSEN_THEME = "chosen theme"
 const val LOCAL_SP = "local settings theme"
 const val TYPE_ITEM_EARTH = 1
 const val TYPE_ITEM_MARS = 2
+const val TYPE_ITEM_HEADER = 3
 
 
 class Utils {
