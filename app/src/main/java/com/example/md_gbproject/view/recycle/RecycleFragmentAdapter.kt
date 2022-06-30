@@ -125,13 +125,13 @@ class RecycleFragmentAdapter(
 
                 }
                 recycleMarsImage.setOnClickListener {
-                    isOpenDescription = !isOpenDescription
                     if (isOpenDescription) {
                         supportingTextMars.visibility = View.GONE
 
                     } else {
                         supportingTextMars.visibility = View.VISIBLE
                     }
+                    isOpenDescription = !isOpenDescription
                 }
             }
         }
