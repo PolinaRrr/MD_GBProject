@@ -19,20 +19,20 @@ class RecycleFragmentAdapter(
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private lateinit var list: List<RecycleData>
+    private lateinit var list: MutableList<RecycleData>
 
     fun setList(newList: List<RecycleData>) {
 
-        this.list = newList
+        this.list = newList.toMutableList()
     }
 
     fun setAddToList(newList: List<RecycleData>, position: Int) {
-        this.list = newList
+        this.list = newList.toMutableList()
         notifyItemChanged(position)
     }
 
     fun setRemoveToList(newList: List<RecycleData>, position: Int) {
-        this.list = newList
+        this.list = newList.toMutableList()
         notifyItemRemoved(position)
     }
 
@@ -101,6 +101,19 @@ class RecycleFragmentAdapter(
                 }
                 recycleMarsButtonDelete.setOnClickListener {
                     onListItemClickListener.onRemoveClick(layoutPosition)
+                }
+                recycleMarsButtonMoveDown.setOnClickListener{
+                    list.removeAt(layoutPosition).apply {
+                        list.add(layoutPosition+1,this)
+                    }
+                    notifyItemMoved(layoutPosition,layoutPosition+1)
+                }
+                recycleMarsButtonMoveUp.setOnClickListener{
+                    list.removeAt(layoutPosition).apply {
+                        list.add(layoutPosition-1,this)
+                    }
+                    notifyItemMoved(layoutPosition,layoutPosition-1)
+
                 }
             }
         }
