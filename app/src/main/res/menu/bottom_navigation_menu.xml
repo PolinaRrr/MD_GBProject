@@ -17,9 +17,9 @@
             android:title="@string/animation"/>
 
         <item
-            android:id="@+id/item_layouts"
-            android:icon="@drawable/ic_layers"
-            android:title="@string/layouts"/>
+            android:id="@+id/item_recycle"
+            android:icon="@drawable/ic_recycling"
+            android:title="@string/recycle"/>
     </group>
 
 </menu>

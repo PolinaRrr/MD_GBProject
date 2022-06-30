@@ -54,4 +54,5 @@ The Hitchhiker’s Guide to the Galaxy sells rather better than the Encyclopedia
     <string name="object_animator">Object Animator</string>
     <string name="archive">Archive</string>
     <string name="send">Send</string>
+    <string name="recycle">Recycle</string>
 </resources>

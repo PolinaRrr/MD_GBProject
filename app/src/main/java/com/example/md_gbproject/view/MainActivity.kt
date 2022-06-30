@@ -7,7 +7,7 @@ import com.example.md_gbproject.databinding.ActivityMainBinding
 import com.example.md_gbproject.utils.CHOSEN_THEME
 import com.example.md_gbproject.utils.LOCAL_SP
 import com.example.md_gbproject.view.animation.AnimationFragment
-import com.example.md_gbproject.view.layouts.LayoutsFragment
+import com.example.md_gbproject.view.recycle.RecycleFragment
 import com.example.md_gbproject.view.navigation.AppsServicesFragment
 import com.example.md_gbproject.view.picture.PictureOfDayFragment
 
@@ -39,10 +39,10 @@ class MainActivity : AppCompatActivity() {
                         AnimationFragment.newInstance()
                     ).addToBackStack("").commit()
                 }
-                R.id.item_layouts -> {
+                R.id.item_recycle -> {
                     supportFragmentManager.beginTransaction().replace(
                         R.id.fragment_container_view,
-                        LayoutsFragment.newInstance()
+                        RecycleFragment.newInstance()
                     ).addToBackStack("").commit()
 
                 }
