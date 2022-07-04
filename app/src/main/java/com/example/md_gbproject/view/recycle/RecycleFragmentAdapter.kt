@@ -148,7 +148,6 @@ class RecycleFragmentAdapter(
                             notifyItemMoved(layoutPosition, newPosition)
                         }
                     }
-
                 }
                 recycleMarsButtonMoveUp.setOnClickListener {
 

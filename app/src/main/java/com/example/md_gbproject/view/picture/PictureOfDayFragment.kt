@@ -1,5 +1,6 @@
 package com.example.md_gbproject.view.picture
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -103,6 +104,7 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
                     Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
                 }
 
+                binding.bottomSheet.textViewAnnotation.typeface = Typeface.createFromAsset(requireActivity().assets,"bogart_black.ttf")
                 binding.bottomSheet.textViewTitle.text =
                     pictureOfDayState.pictureOfDayResponseData.title
 
