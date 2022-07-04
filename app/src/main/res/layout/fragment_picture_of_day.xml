@@ -21,10 +21,6 @@
         android:background="@drawable/round_outline"
         android:outlineProvider="background"/>
 
-    <include
-        android:id="@+id/bottom_sheet"
-        layout="@layout/bottom_sheet_layout" />
-
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group"
         android:layout_width="wrap_content"
@@ -47,6 +43,11 @@
             android:layout_height="wrap_content"
             android:text="@string/tdby" />
     </com.google.android.material.chip.ChipGroup>
+
+    <include
+        android:id="@+id/bottom_sheet"
+        layout="@layout/bottom_sheet_layout" />
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

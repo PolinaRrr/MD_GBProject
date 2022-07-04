@@ -1,11 +1,16 @@
 package com.example.md_gbproject.view.picture
 
-import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.SpannedString
+import android.text.style.BulletSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -83,6 +88,7 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
         })
     }
 
+
     private fun renderData(pictureOfDayState: AppState) {
 
         when (pictureOfDayState) {
@@ -104,9 +110,30 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
                     Glide.with(this).load(SURPRISE_IMAGE).into(binding.image)
                 }
 
-                binding.bottomSheet.textViewAnnotation.typeface = Typeface.createFromAsset(requireActivity().assets,"bogart_black.ttf")
-                binding.bottomSheet.textViewTitle.text =
-                    pictureOfDayState.pictureOfDayResponseData.title
+//                binding.bottomSheet.textViewAnnotation.typeface =
+//                    Typeface.createFromAsset(requireActivity().assets,"bogart_black.ttf")
+
+                //для хранения результала SpannableString SpannableStringBuilder
+                val spannedString: SpannedString
+
+                //для изменения атрибутов уже имеющегося текста(например, цвет)
+                val spannableString: SpannableString =
+                    SpannableString(pictureOfDayState.pictureOfDayResponseData.title)
+
+                //расширенный функционал, может и добавлять символы и удалять и менять атрибуты
+                val spannableStringBuilder: SpannableStringBuilder
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    spannableString.setSpan(
+                        BulletSpan(
+                            5,
+                            ContextCompat.getColor(requireContext(), R.color.mg_theme_light_onSurface),
+                            10
+                        ), 0, 10, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                }
+
+                binding.bottomSheet.textViewTitle.text = spannableString
 
                 binding.bottomSheet.textViewAnnotation.text =
                     pictureOfDayState.pictureOfDayResponseData.explanation
