@@ -3,7 +3,6 @@ package com.example.md_gbproject.view.picture
 import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
-import android.text.SpannableStringBuilder
 import android.text.SpannedString
 import android.text.style.BulletSpan
 import android.text.style.ForegroundColorSpan
@@ -114,17 +113,17 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
 //                binding.bottomSheet.textViewAnnotation.typeface =
 //                    Typeface.createFromAsset(requireActivity().assets,"bogart_black.ttf")
 
-                //для хранения результала SpannableString SpannableStringBuilder
-                val spannedString: SpannedString
+                /*для хранения результала SpannableString SpannableStringBuilder
+                val spannedString: SpannedString*/
 
                 //для изменения атрибутов уже имеющегося текста(например, цвет)
                 val spannableString: SpannableString =
-                    SpannableString(pictureOfDayState.pictureOfDayResponseData.title)
-                val titleLength=pictureOfDayState.pictureOfDayResponseData.title.length
+                    createRainbowTitle(pictureOfDayState.pictureOfDayResponseData.title)
 
-                //расширенный функционал, может и добавлять символы и удалять и менять атрибуты
+                /*расширенный функционал, может и добавлять символы и удалять и менять атрибуты
                 val spannableStringBuilder: SpannableStringBuilder
-
+                */
+                
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                     spannableString.setSpan(
                         BulletSpan(
@@ -136,15 +135,6 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
                             10
                         ), 0, 10, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
-
-                    spannableString.setSpan(
-                        ForegroundColorSpan(
-                            ContextCompat.getColor(
-                                requireContext(),
-                                R.color.teal_theme_light_navigationBarColor
-                            ),
-                        ), 0, titleLength, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
-                    )
                 }
 
                 binding.bottomSheet.textViewTitle.text = spannableString
@@ -155,6 +145,39 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
         }
     }
 
+
+    private fun createRainbowTitle(string: String): SpannableString {
+        val arr = string.toCharArray()
+
+        Log.d("@@@", arr.lastIndex.toString())
+        Log.d("@@@", arr.size.toString())
+
+        val spanStr = SpannableString(string)
+        val colorArr = arrayOf(
+            R.color.red,
+            R.color.orange,
+            R.color.yellow,
+            R.color.green,
+            R.color.cyan,
+            R.color.blue,
+            R.color.violet
+        )
+        var numSpace = 0
+        for (i in arr.indices) {
+            if (arr[i] == ' ') {
+                numSpace++
+            } else {
+                spanStr.setSpan(
+                    ForegroundColorSpan(
+                        ContextCompat.getColor(
+                            requireContext(), colorArr[(i - numSpace) % colorArr.size]
+                        ),
+                    ), i, i + 1, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+            }
+        }
+        return spanStr
+    }
 
     override fun onDestroy() {
         _binding = null

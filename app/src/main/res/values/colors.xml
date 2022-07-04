@@ -180,4 +180,14 @@
     <color name="mg_theme_dark_onSurfaceVariant">#D1C3CC</color>
     <color name="mg_theme_dark_tint">#D1C3CC</color>
 
+
+    <color name="red">#FD0303</color>
+    <color name="orange">#F45E0B</color>
+    <color name="yellow">#F8D10C</color>
+    <color name="green">#3EF30D</color>
+    <color name="cyan">#30EACE</color>
+    <color name="blue">#0548F1</color>
+    <color name="violet">#500BF1</color>
+
+
 </resources>
