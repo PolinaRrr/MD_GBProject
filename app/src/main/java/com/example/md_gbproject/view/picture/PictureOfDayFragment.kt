@@ -6,6 +6,7 @@ import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.SpannedString
 import android.text.style.BulletSpan
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -119,6 +120,7 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
                 //для изменения атрибутов уже имеющегося текста(например, цвет)
                 val spannableString: SpannableString =
                     SpannableString(pictureOfDayState.pictureOfDayResponseData.title)
+                val titleLength=pictureOfDayState.pictureOfDayResponseData.title.length
 
                 //расширенный функционал, может и добавлять символы и удалять и менять атрибуты
                 val spannableStringBuilder: SpannableStringBuilder
@@ -127,9 +129,21 @@ class PictureOfDayFragment : Fragment(), View.OnClickListener {
                     spannableString.setSpan(
                         BulletSpan(
                             5,
-                            ContextCompat.getColor(requireContext(), R.color.mg_theme_light_onSurface),
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.mg_theme_light_onSurface
+                            ),
                             10
                         ), 0, 10, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+
+                    spannableString.setSpan(
+                        ForegroundColorSpan(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.teal_theme_light_navigationBarColor
+                            ),
+                        ), 0, titleLength, SpannedString.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
                 }
 
