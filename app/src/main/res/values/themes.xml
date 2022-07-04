@@ -4,6 +4,7 @@
         <!-- Primary brand color. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/bogart_black</item>
         <item name="colorPrimary">?brandColor_colorPrimary</item>
         <item name="colorPrimaryVariant">?brandColor_colorPrimaryVariant</item>
         <item name="colorOnPrimary">?brandColor_colorOnPrimary</item>
