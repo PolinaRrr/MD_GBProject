@@ -22,9 +22,11 @@ class RecycleFragment : Fragment(),OnListItemClickListener {
         get() = _binding!!
 
     private val list = mutableListOf(
-        RecycleData("Header","", TYPE_ITEM_HEADER),
-        RecycleData("Earth","Description Earth", TYPE_ITEM_EARTH),
-        RecycleData("Mars","Description Mars", TYPE_ITEM_MARS)
+        RecycleData(0,"Header","", TYPE_ITEM_HEADER),
+        RecycleData(1,"Earth","Description Earth", TYPE_ITEM_EARTH),
+        RecycleData(2,"Mars","Description Mars", TYPE_ITEM_MARS),
+        RecycleData(3,"Earth","Description Earth", TYPE_ITEM_EARTH),
+        RecycleData(4,"Mars","Description Mars", TYPE_ITEM_MARS),
     )
     lateinit var adapter: RecycleFragmentAdapter
 
@@ -38,7 +40,7 @@ class RecycleFragment : Fragment(),OnListItemClickListener {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = RecycleFragmentAdapter(this)
+        adapter = RecycleFragmentAdapter(this,list)
         adapter.setList(list)
         binding.mainRecycleView.adapter = adapter
         ItemTouchHelper(ItemTouchHelperCallback(adapter)).attachToRecyclerView(binding.mainRecycleView)

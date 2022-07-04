@@ -3,11 +3,17 @@ package com.example.md_gbproject.view.recycle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.md_gbproject.R
+import com.example.md_gbproject.data.Changes
 import com.example.md_gbproject.data.RecycleData
+import com.example.md_gbproject.data.createCombinedPayloads
 import com.example.md_gbproject.databinding.FragmentEarthRecycleBinding
 import com.example.md_gbproject.databinding.FragmentMarsRecycleBinding
 import com.example.md_gbproject.databinding.FragmentRecycleHeaderBinding
+import com.example.md_gbproject.repository.DiffUtilCallback
 import com.example.md_gbproject.repository.ItemTouchHelperAdapter
 import com.example.md_gbproject.repository.OnListItemClickListener
 import com.example.md_gbproject.utils.DESCRIPTION_MARS
@@ -18,16 +24,18 @@ import kotlin.math.max
 import kotlin.math.min
 
 class RecycleFragmentAdapter(
-    private var onListItemClickListener: OnListItemClickListener
+    private var onListItemClickListener: OnListItemClickListener,
+    private var list: MutableList<RecycleData>
 ) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>(),ItemTouchHelperAdapter {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter {
 
-    private lateinit var list: MutableList<RecycleData>
+
 
     private var isOpenDescription = false
 
     fun setList(newList: List<RecycleData>) {
-
+        val result = DiffUtil.calculateDiff(DiffUtilCallback(list, newList))
+        result.dispatchUpdatesTo(this)
         this.list = newList.toMutableList()
     }
 
@@ -77,6 +85,32 @@ class RecycleFragmentAdapter(
         }
     }
 
+    override fun onBindViewHolder(
+        holder: RecyclerView.ViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        if (payloads.isEmpty()) {
+            super.onBindViewHolder(holder, position, payloads)
+        } else {
+            when (getItemViewType(position)) {
+                TYPE_ITEM_EARTH -> {
+                    (holder as EarthViewHolder).bindText(list[position])
+                }
+                TYPE_ITEM_MARS -> {
+                    val result = createCombinedPayloads(payloads as List<Changes<RecycleData>>)
+                    if(result.oldData.title!=result.newData.title)
+                    (holder as MarsViewHolder).itemView.
+                    findViewById<TextView>(R.id.title_mars_recycle).text = result.newData.title
+                }
+                TYPE_ITEM_HEADER -> {
+                    (holder as HeaderViewHolder).bindText(list[position])
+                }
+            }
+        }
+
+    }
+
     override fun getItemCount(): Int {
         return list.size
     }
@@ -108,7 +142,7 @@ class RecycleFragmentAdapter(
                     onListItemClickListener.onRemoveClick(layoutPosition)
                 }
                 recycleMarsButtonMoveDown.setOnClickListener {
-                    val newPosition=min(layoutPosition + 1, list.size-1)
+                    val newPosition = min(layoutPosition + 1, list.size - 1)
                     list.removeAt(layoutPosition).apply {
                         list.add(newPosition, this).apply {
                             notifyItemMoved(layoutPosition, newPosition)
@@ -118,7 +152,7 @@ class RecycleFragmentAdapter(
                 }
                 recycleMarsButtonMoveUp.setOnClickListener {
 
-                    val newPosition=max(layoutPosition - 1, 1)
+                    val newPosition = max(layoutPosition - 1, 1)
                     list.removeAt(layoutPosition).apply {
                         list.add(newPosition, this)
                         notifyItemMoved(layoutPosition, newPosition)
@@ -150,7 +184,7 @@ class RecycleFragmentAdapter(
         list.removeAt(fromPosition).apply {
             list.add(toPosition, this)
         }
-        notifyItemMoved(fromPosition,toPosition)
+        notifyItemMoved(fromPosition, toPosition)
     }
 
     override fun onItemDismiss(position: Int) {
