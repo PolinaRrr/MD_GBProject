@@ -26,7 +26,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-
     <style name="TealThemeProject" parent="GrayThemeProject">
         <item name="brandColor">@color/teal_900</item>
         <item name="brandColor_colorPrimary">@color/teal_theme_dark_primary</item>

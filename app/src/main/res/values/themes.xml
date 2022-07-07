@@ -42,6 +42,5 @@
     <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">?brandColor_tint</item>
     </style>
-
-
+    
 </resources>
