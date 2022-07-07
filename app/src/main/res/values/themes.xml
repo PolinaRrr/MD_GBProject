@@ -26,7 +26,7 @@
         <item name="colorOnSurface">?brandColor_onSurface</item>
         <item name="colorSurfaceVariant">?brandColor_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">?brandColor_onSurfaceVariant</item>
-
+        <item name="android:windowBackground">@drawable/vivid_blurred_colorful_background</item>
 
         <!-- Secondary brand color. -->
 
@@ -42,5 +42,5 @@
     <style name="BlueGreyStyleFAB" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">?brandColor_tint</item>
     </style>
-    
+
 </resources>
