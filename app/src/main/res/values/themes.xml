@@ -27,6 +27,7 @@
         <item name="colorSurfaceVariant">?brandColor_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">?brandColor_onSurfaceVariant</item>
 
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
 
         <!-- Secondary brand color. -->
 
